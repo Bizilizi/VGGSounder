@@ -1,0 +1,67 @@
+[project]
+name = "vggsounder"
+version = "0.1.1"
+description = "A Python package for accessing VGGSounder dataset labels and metadata"
+readme = "README.md"
+authors = [
+    { name = "Daniil Zverev", email = "daniil.zverev@tum.de" }
+]
+requires-python = ">=3.8"
+dependencies = []
+keywords = ["audio", "video", "classification", "dataset", "vgg", "machine-learning"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+    "Topic :: Multimedia :: Video :: Display",
+]
+
+[project.urls]
+Homepage = "https://vggsounder.github.io/"
+Repository = "https://github.com/Bizilizi/VGGSounder"
+Issues = "https://github.com/Bizilizi/VGGSounder/issues"
+
+[project.optional-dependencies]
+dev = [
+    "crowd-kit>=1.4.1",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.5",
+    "numpy>=2.3.2",
+    "pandas>=2.3.1",
+    "scikit-learn>=1.7.1",
+    "tqdm>=4.67.1",
+]
+
+[project.scripts]
+vggsounder = "vggsounder:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["vggsounder"]
+include = ["vggsounder/data/*"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/vggsounder",
+    "/README.md",
+    "/LICENSE",
+]
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple/"
+publish-url = "https://pypi.org/simple/"
+explicit = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

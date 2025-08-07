@@ -28,10 +28,70 @@ VGGSounder: Audio-Visual Evaluations for Foundation Models</a></h1>
 - 📊 Multiple classes per one sample
 
 
+## 🚀 Installation
+
+The VGGSounder dataset is now available as a Python package! Install it via pip:
+
+```bash
+pip install vggsounder
+```
+
+Or install from source using [uv](https://docs.astral.sh/uv/):
+
+```bash
+git clone https://github.com/bizilizi/vggsounder.git
+cd vggsounder
+uv build
+pip install dist/vggsounder-*.whl
+```
+
+## 🐍 Python Package Usage
+
+### Quick Start
+
+```python
+import vggsounder
+
+# Load the dataset
+labels = vggsounder.VGGSounder()
+
+# Access video data by ID
+video_data = labels["--U7joUcTCo_000000"]
+print(video_data.labels)        # List of labels for this video
+print(video_data.meta_labels)   # Metadata (background_music, static_image, voice_over)
+print(video_data.modalities)    # Modality for each label (A, V, AV)
+
+# Get dataset statistics
+stats = labels.stats()
+print(f"Total videos: {stats['total_videos']}")
+print(f"Unique labels: {stats['unique_labels']}")
+
+# Search functionality
+piano_videos = labels.get_videos_with_labels("playing piano")
+voice_over_videos = labels.get_videos_with_meta(voice_over=True)
+```
+
+### Advanced Usage
+
+```python
+# Dict-like interface
+print(len(labels))                    # Number of videos
+print("video_id" in labels)           # Check if video exists
+for video_id in labels:               # Iterate over video IDs
+    video_data = labels[video_id]
+
+# Get all unique labels
+all_labels = labels.get_all_labels()
+
+# Complex queries
+static_speech_videos = labels.get_videos_with_meta(
+    static_image=True, voice_over=True
+)
+```
+
 ## 🏷️ Label Format
 
 VGGSounder annotations are stored in a CSV file located at `data/vggsounder.csv`. Each row corresponds to a single label for a specific video sample. The dataset supports **multi-label**, **multi-modal** classification with additional **meta-information** for robust evaluation.
-
 
 ### Columns
 
@@ -53,6 +113,86 @@ VGGSounder annotations are stored in a CSV file located at `data/vggsounder.csv`
 | `---g-f_I2yQ_000001` | `people crowd`     | AV       | True             | False        | False      |
 | `---g-f_I2yQ_000001` | `playing timpani`  | A        | True             | False        | False      |
 
+## 🧪 Benchmark Evaluation
+
+VGGSounder provides a comprehensive benchmarking system to evaluate audio-visual foundation models across multiple modalities and metrics. The benchmark supports both discrete predictions and continuous logits-based evaluation.
+
+### Supported Modalities
+
+- **`a`**: Audio - includes samples with audio component (A + AV)
+- **`v`**: Visual - includes samples with visual component (V + AV)
+- **`av`**: Audio-Visual - samples with both modalities (AV only)
+- **`a only`**: Audio-only - pure audio samples (excludes AV samples)
+- **`v only`**: Visual-only - pure visual samples (excludes AV samples)
+
+### Available Metrics
+
+The benchmark computes a comprehensive set of metrics:
+- **Top-k metrics**: `hit_rate@k`, `f1@k`, `accuracy@k`, `precision@k`, `recall@k`, `jaccard@k` (for k=1,3,5,10)
+- **Aggregate metrics**: `f1`, `f1_macro`, `accuracy`, `precision`, `recall`, `jaccard`, `hit_rate`
+- **AUC metrics**: `auc_roc`, `auc_pr` (ROC-AUC and Precision-Recall AUC)
+- **Modality confusion**: `mu` (measures when single modalities succeed where multimodal fails)
+
+### Model Results Format
+
+Model predictions should be saved as pickle files with the following structure:
+
+```python
+{
+    "video_id": {
+        "predictions": {  # Optional: discrete predictions
+            "a": ["label1", "label2", ...],     # Audio predictions
+            "v": ["label1", "label3", ...],     # Visual predictions
+            "av": ["label1", "label2", ...]     # Audio-visual predictions
+        },
+        "logits": {      # Optional: continuous scores
+            "a": [0.1, 0.8, 0.3, ...],         # Audio logits (310 classes)
+            "v": [0.2, 0.1, 0.9, ...],         # Visual logits (310 classes)  
+            "av": [0.4, 0.6, 0.2, ...]         # Audio-visual logits (310 classes)
+        }
+    },
+    # ... more video_ids
+}
+```
+
+**Note**: Either `predictions` or `logits` (or both) should be provided. Logits enable more detailed top-k and AUC analysis.
+
+### Running the Benchmark
+
+#### Quick Start
+
+```python
+from vggsounder.benchmark import benchmark
+
+# Define model display names
+display_names = {
+    "cav-mae": "CAV-MAE",
+    "deepavfusion": "DeepAVFusion", 
+    "equiav": "Equi-AV",
+    "gemini-1.5-flash": "Gemini 1.5 Flash",
+    "gemini-1.5-pro": "Gemini 1.5 Pro"
+}
+
+# Specify metrics and modalities to evaluate
+metrics = [
+    ("accuracy", ["a", "v", "av"]),
+    ("f1", ["a", "v", "av", "a only", "v only"]), 
+    ("hit_rate", ["a", "v", "av"]),
+    ("mu", ["a", "v", "av"])  # Modality confusion
+]
+
+# Run benchmark
+results_table = benchmark(
+    models_path="path/to/model/pickles",
+    display_names=display_names,
+    metrics=metrics
+)
+
+print(results_table)
+```
+
+For a detailed example of how we generate the tables used in our paper, please see the [example notebook](https://github.com/Bizilizi/VGGSounder/blob/main/experiments/visualisations/metrics.ipynb).
+
 
 ## 📑 Citation
 
@@ -72,4 +212,4 @@ The authors would like to thank [Felix Förster](https://www.linkedin.com/in/fel
 
 ## 👮 License
 
-This project is released under the Apache 2.0 license as found in the LICENSE file. Please get in touch with us if you find any potential violations.
+This project is released under the Apache 2.0 license as found in the LICENSE file. Please get in touch with us if you find any potential violations. 

@@ -1,0 +1,1581 @@
+id,label,original,modality
+-0vPFx-wRRI_000030,male singing,False,AV
+-0vPFx-wRRI_000030,people finger snapping,True,AV
+-0vPFx-wRRI_000030,people humming,False,-
+-0vPFx-wRRI_000030,playing harp,False,-
+-M7ZNV6gLo0_000310,bird squawking,True,-
+-M7ZNV6gLo0_000310,"female speech, woman speaking",False,A
+-M7ZNV6gLo0_000310,"railroad car, train wagon",False,-
+-OEJFMpQ-ko_000159,"child speech, kid speaking",False,AV
+-OEJFMpQ-ko_000159,"female speech, woman speaking",False,A
+-OEJFMpQ-ko_000159,playing darts,True,AV
+-Q_UXiwWR_c_000030,car engine starting,False,AV
+-Q_UXiwWR_c_000030,car passing by,True,AV
+-Q_UXiwWR_c_000030,"engine accelerating, revving, vroom",False,-
+-Q_UXiwWR_c_000030,male singing,False,-
+-Q_UXiwWR_c_000030,"male speech, man speaking",False,A
+-Q_UXiwWR_c_000030,playing drum kit,False,-
+-Q_UXiwWR_c_000030,playing synthesizer,False,-
+-Q_UXiwWR_c_000030,rapping,False,A
+-aK9JKAGme0_000051,"bird chirping, tweeting",False,A
+-aK9JKAGme0_000051,canary calling,False,-
+-aK9JKAGme0_000051,car engine idling,False,-
+-aK9JKAGme0_000051,car engine starting,False,-
+-aK9JKAGme0_000051,cheetah chirrup,True,AV
+-aK9JKAGme0_000051,"engine accelerating, revving, vroom",False,-
+-aK9JKAGme0_000051,people whispering,False,-
+-aK9JKAGme0_000051,wind noise,False,-
+-nJbGyPg6BY_000060,"female speech, woman speaking",False,AV
+-nJbGyPg6BY_000060,"male speech, man speaking",False,AV
+-nJbGyPg6BY_000060,people booing,False,-
+-nJbGyPg6BY_000060,people cheering,False,-
+-nJbGyPg6BY_000060,people clapping,True,A
+-nJbGyPg6BY_000060,people crowd,False,-
+-nJbGyPg6BY_000060,people whistling,False,-
+-zIrltLewfc_000194,"bird chirping, tweeting",False,A
+-zIrltLewfc_000194,playing harp,False,-
+-zIrltLewfc_000194,warbler chirping,True,-
+-zIrltLewfc_000194,wind noise,False,A
+-zIrltLewfc_000194,wind rustling leaves,False,V
+04QV0Xi5YTk_000030,playing zither,True,AV
+0T39A4knSu4_000057,elephant trumpeting,True,AV
+0T39A4knSu4_000057,"female speech, woman speaking",False,A
+0T39A4knSu4_000057,people screaming,False,-
+0T39A4knSu4_000057,playing drum kit,False,-
+0T39A4knSu4_000057,playing tambourine,False,-
+0UeEkqkZmvo_000160,playing acoustic guitar,False,AV
+0UeEkqkZmvo_000160,playing bass guitar,False,-
+0UeEkqkZmvo_000160,playing cymbal,False,-
+0UeEkqkZmvo_000160,playing drum kit,False,AV
+0UeEkqkZmvo_000160,playing electric guitar,False,AV
+0UeEkqkZmvo_000160,playing snare drum,False,AV
+0UeEkqkZmvo_000160,playing washboard,True,AV
+0he6VV5Y9Bg_000030,"bird chirping, tweeting",False,-
+0he6VV5Y9Bg_000030,cricket chirping,True,A
+0he6VV5Y9Bg_000030,"male speech, man speaking",False,A
+0izHOfrwPn4_000180,"bird chirping, tweeting",False,A
+0izHOfrwPn4_000180,duck quacking,True,A
+0izHOfrwPn4_000180,"male speech, man speaking",False,AV
+0izHOfrwPn4_000180,playing drum kit,False,-
+0izHOfrwPn4_000180,playing electric guitar,False,-
+0izHOfrwPn4_000180,playing piano,False,-
+0izHOfrwPn4_000180,playing trumpet,False,A
+0kK-PnupAow_000086,opening or closing car doors,True,AV
+0kK-PnupAow_000086,wind noise,False,A
+0q6GOUn_dhU_000066,orchestra,False,AV
+0q6GOUn_dhU_000066,playing castanets,True,AV
+0q6GOUn_dhU_000066,playing cello,False,-
+0q6GOUn_dhU_000066,playing flute,False,-
+0q6GOUn_dhU_000066,playing tambourine,False,-
+0q6GOUn_dhU_000066,playing trombone,False,-
+0q6GOUn_dhU_000066,"playing violin, fiddle",False,AV
+10aBef0Ghkc_000040,playing piano,True,AV
+14lBeX_dOHU_000234,"bird chirping, tweeting",False,AV
+14lBeX_dOHU_000234,canary calling,True,AV
+14lBeX_dOHU_000234,people whispering,False,-
+1B-RuZgSqf8_000030,hail,False,-
+1B-RuZgSqf8_000030,raining,True,-
+1B-RuZgSqf8_000030,splashing water,False,AV
+1B-RuZgSqf8_000030,thunder,False,-
+1B-RuZgSqf8_000030,wind noise,False,-
+1B-RuZgSqf8_000030,wind rustling leaves,False,-
+1BivKH8w7Fo_000037,children shouting,False,A
+1BivKH8w7Fo_000037,"female speech, woman speaking",False,-
+1BivKH8w7Fo_000037,people booing,False,-
+1BivKH8w7Fo_000037,people cheering,True,A
+1BivKH8w7Fo_000037,people crowd,False,-
+1BivKH8w7Fo_000037,people screaming,False,A
+1BivKH8w7Fo_000037,people whistling,False,A
+1Isq_KJHriU_000016,dog barking,False,-
+1Isq_KJHriU_000016,dog baying,True,AV
+1Isq_KJHriU_000016,dog bow-wow,False,AV
+1Isq_KJHriU_000016,dog growling,False,AV
+1Isq_KJHriU_000016,dog whimpering,False,-
+1Isq_KJHriU_000016,"female speech, woman speaking",False,A
+1Isq_KJHriU_000016,people giggling,False,-
+1ON1iLkUPp8_000040,playing bass guitar,False,-
+1ON1iLkUPp8_000040,playing glockenspiel,False,-
+1ON1iLkUPp8_000040,playing harp,False,-
+1ON1iLkUPp8_000040,playing piano,False,-
+1ON1iLkUPp8_000040,playing synthesizer,False,-
+1ON1iLkUPp8_000040,playing vibraphone,True,A
+1UNk699Uqto_000030,"bird chirping, tweeting",False,AV
+1UNk699Uqto_000030,bird wings flapping,False,-
+1UNk699Uqto_000030,goose honking,True,AV
+1bbyaXEVouE_000030,female singing,False,AV
+1bbyaXEVouE_000030,fire crackling,True,-
+1bbyaXEVouE_000030,singing choir,False,AV
+1hrYIADPJ_w_000017,air conditioning noise,True,AV
+1hrYIADPJ_w_000017,wind noise,False,A
+21lu8Iaf9II_000060,"female speech, woman speaking",False,AV
+21lu8Iaf9II_000060,people clapping,False,AV
+21lu8Iaf9II_000060,people finger snapping,True,AV
+28p0DrP3KgI_000021,chopping wood,False,-
+28p0DrP3KgI_000021,electric grinder grinding,True,AV
+28p0DrP3KgI_000021,"male speech, man speaking",False,A
+28p0DrP3KgI_000021,people giggling,False,-
+2BMOGrFU_m8_000167,"bee, wasp, etc. buzzing",False,AV
+2BMOGrFU_m8_000167,"bird chirping, tweeting",False,-
+2BMOGrFU_m8_000167,cricket chirping,False,A
+2BMOGrFU_m8_000167,"fly, housefly buzzing",True,-
+2IEoe3YvCJo_000020,cat caterwauling,True,AV
+2IEoe3YvCJo_000020,cat growling,False,AV
+2IEoe3YvCJo_000020,cat hissing,False,-
+2IEoe3YvCJo_000020,cat purring,False,AV
+2IEoe3YvCJo_000020,"male speech, man speaking",False,A
+2S-YRM0p6cc_000034,coyote howling,True,AV
+2S-YRM0p6cc_000034,wind noise,False,-
+2f7i-ndrx9g_000060,door slamming,False,-
+2f7i-ndrx9g_000060,opening or closing drawers,True,AV
+2j9izxhyFlI_000035,"female speech, woman speaking",False,A
+2j9izxhyFlI_000035,writing on blackboard with chalk,True,AV
+2jKheXvnT6o_000030,cat caterwauling,False,-
+2jKheXvnT6o_000030,cat growling,False,-
+2jKheXvnT6o_000030,cat hissing,False,-
+2jKheXvnT6o_000030,cat meowing,False,AV
+2jKheXvnT6o_000030,cat purring,True,AV
+2jKheXvnT6o_000030,"female speech, woman speaking",False,A
+2rW2I6KmWhw_000030,dog bow-wow,False,AV
+2rW2I6KmWhw_000030,dog growling,False,AV
+2rW2I6KmWhw_000030,dog howling,True,AV
+2rW2I6KmWhw_000030,dog whimpering,False,AV
+2rW2I6KmWhw_000030,playing piano,False,A
+2rciuzaEEWo_000025,"bird chirping, tweeting",False,-
+2rciuzaEEWo_000025,chimpanzee pant-hooting,True,AV
+2rciuzaEEWo_000025,chipmunk chirping,False,-
+2rciuzaEEWo_000025,cricket chirping,False,-
+2rciuzaEEWo_000025,wind noise,False,-
+2v1rSA4FqlM_000100,"male speech, man speaking",False,A
+2v1rSA4FqlM_000100,playing drum kit,False,-
+2v1rSA4FqlM_000100,pumping water,True,AV
+2v1rSA4FqlM_000100,sloshing water,False,AV
+2v1rSA4FqlM_000100,splashing water,False,AV
+2v1rSA4FqlM_000100,squishing water,False,A
+3-Pvp6uiMAo_000000,"male speech, man speaking",False,A
+3-Pvp6uiMAo_000000,strike lighter,True,-
+3-qCp_EP-5Q_000234,"bird chirping, tweeting",False,AV
+3-qCp_EP-5Q_000234,male singing,False,-
+3-qCp_EP-5Q_000234,parrot talking,True,AV
+3-sPbKkiYvI_000532,dog barking,False,AV
+3-sPbKkiYvI_000532,"male speech, man speaking",False,A
+3-sPbKkiYvI_000532,running electric fan,True,AV
+3-sPbKkiYvI_000532,wind noise,False,-
+312ti9EH4uY_000450,sea waves,True,AV
+312ti9EH4uY_000450,splashing water,False,AV
+312ti9EH4uY_000450,spraying water,False,-
+312ti9EH4uY_000450,wind noise,False,-
+3JZbfcbZaoM_000030,car engine idling,False,-
+3JZbfcbZaoM_000030,car engine knocking,True,AV
+3NvKtRbbOYU_000310,driving snowmobile,True,AV
+3NvKtRbbOYU_000310,"engine accelerating, revving, vroom",False,AV
+3eaA8bsLJBA_000042,playing cornet,True,AV
+3eaA8bsLJBA_000042,playing piano,False,A
+3qtnbifHKXU_000064,playing tuning fork,True,V
+4IZKViDklnM_000030,playing drum kit,False,A
+4IZKViDklnM_000030,wind rustling leaves,True,-
+4Wpbc5bL4ws_000068,eletric blender running,True,-
+4Wpbc5bL4ws_000068,people slapping,False,-
+4Wpbc5bL4ws_000068,wind noise,False,-
+4kkrLlD_7sg_000018,"male speech, man speaking",False,A
+4kkrLlD_7sg_000018,playing bugle,True,A
+4p8n4Zf-WMM_000190,cricket chirping,False,A
+4p8n4Zf-WMM_000190,fireworks banging,False,-
+4p8n4Zf-WMM_000190,lighting firecrackers,True,AV
+4p8n4Zf-WMM_000190,people cheering,False,A
+4p8n4Zf-WMM_000190,wind noise,False,-
+4tOFGK47I5E_000005,"bird chirping, tweeting",False,-
+4tOFGK47I5E_000005,cattle mooing,False,-
+4tOFGK47I5E_000005,cow lowing,True,AV
+5-FHy1Q61n8_000114,dog barking,False,AV
+5-FHy1Q61n8_000114,dog baying,True,AV
+5-FHy1Q61n8_000114,dog bow-wow,False,AV
+5-FHy1Q61n8_000114,dog growling,False,AV
+5-FHy1Q61n8_000114,dog howling,False,-
+5-FHy1Q61n8_000114,dog whimpering,False,AV
+53KoRxxr1jc_000030,"female speech, woman speaking",False,A
+53KoRxxr1jc_000030,goat bleating,True,-
+53KoRxxr1jc_000030,"male speech, man speaking",False,AV
+53KoRxxr1jc_000030,people coughing,False,A
+53KoRxxr1jc_000030,sheep bleating,False,AV
+56_BCN7x6F8_000030,fire crackling,False,-
+56_BCN7x6F8_000030,playing didgeridoo,True,AV
+5JaMY3ZmbXM_000188,tractor digging,True,AV
+5NyjOIjRKKM_000018,dog barking,False,AV
+5NyjOIjRKKM_000018,dog baying,False,-
+5NyjOIjRKKM_000018,dog bow-wow,True,AV
+5NyjOIjRKKM_000018,dog growling,False,AV
+5NyjOIjRKKM_000018,dog whimpering,False,-
+5NyjOIjRKKM_000018,orchestra,False,-
+5NyjOIjRKKM_000018,playing drum kit,False,A
+5NyjOIjRKKM_000018,playing flute,False,-
+5NyjOIjRKKM_000018,playing trombone,False,-
+5NyjOIjRKKM_000018,playing trumpet,False,A
+5NyjOIjRKKM_000018,"playing violin, fiddle",False,-
+5Q-328ATot8_000019,"bird chirping, tweeting",False,A
+5Q-328ATot8_000019,cricket chirping,False,A
+5Q-328ATot8_000019,tornado roaring,True,A
+5Q-328ATot8_000019,wind noise,False,-
+5Q-328ATot8_000019,wind rustling leaves,False,A
+5QeFh-ZAf8E_000380,blowtorch igniting,True,AV
+5bHACxteut8_000242,eletric blender running,True,AV
+5bLzJ_iMl4s_000030,cat growling,False,-
+5bLzJ_iMl4s_000030,cat hissing,False,-
+5bLzJ_iMl4s_000030,cat meowing,False,-
+5bLzJ_iMl4s_000030,cat purring,True,-
+5bLzJ_iMl4s_000030,"male speech, man speaking",False,A
+5bLzJ_iMl4s_000030,people giggling,False,A
+5hLkSi3BcWA_000021,cat growling,True,AV
+5hLkSi3BcWA_000021,cat hissing,False,-
+5hLkSi3BcWA_000021,cat meowing,False,AV
+5hLkSi3BcWA_000021,cat purring,False,-
+5hLkSi3BcWA_000021,playing bass guitar,False,-
+5jNp0IQb5QQ_000320,car engine idling,False,-
+5jNp0IQb5QQ_000320,female singing,False,-
+5jNp0IQb5QQ_000320,"male speech, man speaking",False,AV
+5jNp0IQb5QQ_000320,people screaming,False,-
+5jNp0IQb5QQ_000320,"vehicle horn, car horn, honking",True,AV
+5lyszxMsT20_000110,playing acoustic guitar,False,AV
+5lyszxMsT20_000110,playing harp,True,AV
+63Wmu5s4e88_000162,tractor digging,True,AV
+6J8rol0Cg3w_000006,church bell ringing,False,-
+6J8rol0Cg3w_000006,wind chime,True,AV
+6OAXLFoBpLY_000000,cat growling,False,-
+6OAXLFoBpLY_000000,cat hissing,False,A
+6OAXLFoBpLY_000000,cat meowing,False,A
+6OAXLFoBpLY_000000,cat purring,True,AV
+6OAXLFoBpLY_000000,people clapping,False,A
+6OAXLFoBpLY_000000,people finger snapping,False,A
+6OAXLFoBpLY_000000,ripping paper,False,-
+6U942AYlcXA_000030,car engine starting,False,AV
+6U942AYlcXA_000030,"engine accelerating, revving, vroom",True,AV
+6xlLMbiEsIM_000030,"bird chirping, tweeting",False,-
+6xlLMbiEsIM_000030,cricket chirping,False,A
+6xlLMbiEsIM_000030,"female speech, woman speaking",False,A
+6xlLMbiEsIM_000030,fire crackling,False,AV
+6xlLMbiEsIM_000030,owl hooting,True,A
+6xlLMbiEsIM_000030,wind noise,False,-
+7916WqcPKBA_000030,car passing by,False,-
+7916WqcPKBA_000030,cat growling,False,AV
+7916WqcPKBA_000030,cat hissing,False,AV
+7916WqcPKBA_000030,cat meowing,False,AV
+7916WqcPKBA_000030,cat purring,True,AV
+7916WqcPKBA_000030,"female speech, woman speaking",False,-
+7AKffyaVJT0_000004,"male speech, man speaking",False,A
+7AKffyaVJT0_000004,running electric fan,True,-
+7Gua0-UrKIw_000030,car engine idling,False,-
+7Gua0-UrKIw_000030,door slamming,False,AV
+7Gua0-UrKIw_000030,"engine accelerating, revving, vroom",False,AV
+7Gua0-UrKIw_000030,opening or closing car doors,False,-
+7Gua0-UrKIw_000030,reversing beeps,True,AV
+7kxpD5UzNpU_000170,"male speech, man speaking",False,AV
+7kxpD5UzNpU_000170,striking pool,True,AV
+7rMhrFb-DsE_000183,blowtorch igniting,True,AV
+7rMhrFb-DsE_000183,playing bass guitar,False,-
+7rMhrFb-DsE_000183,playing drum kit,False,A
+7rMhrFb-DsE_000183,playing electric guitar,False,A
+7rMhrFb-DsE_000183,playing piano,False,-
+89536Yebjvc_000110,chinchilla barking,True,AV
+8BWcP2uUzpo_000107,beat boxing,False,-
+8BWcP2uUzpo_000107,child singing,False,-
+8BWcP2uUzpo_000107,female singing,False,AV
+8BWcP2uUzpo_000107,male singing,False,AV
+8BWcP2uUzpo_000107,people humming,True,-
+8BWcP2uUzpo_000107,playing drum kit,False,A
+8BWcP2uUzpo_000107,playing tabla,False,-
+8BWcP2uUzpo_000107,singing choir,False,-
+8Sfjahpupqg_000000,"male speech, man speaking",False,A
+8Sfjahpupqg_000000,mouse squeaking,True,A
+8Sfjahpupqg_000000,playing bass guitar,False,A
+8Sfjahpupqg_000000,playing piano,False,-
+8Sfjahpupqg_000000,wind chime,False,-
+8SpDSZY-ge0_000451,"heart sounds, heartbeat",True,AV
+8WQnGWD-XJE_000040,cat growling,False,-
+8WQnGWD-XJE_000040,printer printing,True,AV
+8ax7BlXzssY_000000,"child speech, kid speaking",False,-
+8ax7BlXzssY_000000,"female speech, woman speaking",False,A
+8ax7BlXzssY_000000,popping popcorn,True,AV
+8dqn-f5rwNk_000016,"male speech, man speaking",False,A
+8dqn-f5rwNk_000016,plastic bottle crushing,True,AV
+91z1LeIpLbk_000053,"bird chirping, tweeting",False,A
+91z1LeIpLbk_000053,lions growling,True,AV
+91z1LeIpLbk_000053,lions roaring,False,-
+9Ijpv6e57a4_000030,female singing,False,A
+9Ijpv6e57a4_000030,playing bass guitar,False,-
+9Ijpv6e57a4_000030,playing drum kit,False,A
+9Ijpv6e57a4_000030,playing electric guitar,False,-
+9Ijpv6e57a4_000030,playing synthesizer,False,A
+9Ijpv6e57a4_000030,skateboarding,True,AV
+9WClEjrr_RA_000027,"bird chirping, tweeting",False,AV
+9WClEjrr_RA_000027,mynah bird singing,True,AV
+9WClEjrr_RA_000027,wind noise,False,-
+9WClEjrr_RA_000027,wind rustling leaves,False,-
+9_6Sx2Oqq7E_000376,dinosaurs bellowing,True,AV
+9_6Sx2Oqq7E_000376,male singing,False,-
+9_6Sx2Oqq7E_000376,"male speech, man speaking",False,-
+9_6Sx2Oqq7E_000376,people screaming,False,AV
+9_6Sx2Oqq7E_000376,playing drum kit,False,A
+9_6Sx2Oqq7E_000376,playing piano,False,-
+9_6Sx2Oqq7E_000376,playing synthesizer,False,-
+9_6Sx2Oqq7E_000376,playing trumpet,False,A
+9gCeNCnWZhE_000030,playing flute,False,A
+9gCeNCnWZhE_000030,wind noise,False,A
+9gCeNCnWZhE_000030,wind rustling leaves,True,-
+9mu6h8pTooE_000030,"female speech, woman speaking",False,A
+9mu6h8pTooE_000030,horse clip-clop,True,AV
+9mu6h8pTooE_000030,"male speech, man speaking",False,AV
+9nxDHhDpJUk_000065,"bird chirping, tweeting",False,-
+9nxDHhDpJUk_000065,cuckoo bird calling,True,-
+9nxDHhDpJUk_000065,sloshing water,False,-
+9nxDHhDpJUk_000065,wind noise,False,A
+9y2BI6yaNkA_000114,"child speech, kid speaking",False,A
+9y2BI6yaNkA_000114,smoke detector beeping,True,AV
+A1E-agNyE2U_000172,rope skipping,True,AV
+A68tYY9AA9Q_000030,helicopter,True,AV
+A7o-wmriwc8_000007,"bird chirping, tweeting",False,AV
+A7o-wmriwc8_000007,wind noise,False,-
+A7o-wmriwc8_000007,wind rustling leaves,False,V
+A7o-wmriwc8_000007,wood thrush calling,True,AV
+AKxm4V3OylU_000030,lions growling,False,-
+AKxm4V3OylU_000030,lions roaring,True,A
+ANWU9Hiy_5k_000040,car passing by,False,AV
+ANWU9Hiy_5k_000040,driving buses,False,-
+ANWU9Hiy_5k_000040,driving motorcycle,True,AV
+ANWU9Hiy_5k_000040,"engine accelerating, revving, vroom",False,A
+ANWU9Hiy_5k_000040,playing drum kit,False,A
+ANWU9Hiy_5k_000040,"vehicle horn, car horn, honking",False,-
+AS_f4Rn-hAc_000007,"bird chirping, tweeting",False,AV
+AS_f4Rn-hAc_000007,magpie calling,True,AV
+AS_f4Rn-hAc_000007,wind noise,False,-
+AS_f4Rn-hAc_000007,wind rustling leaves,False,-
+Ac1hVfp6OYU_000060,foghorn,True,A
+Ac1hVfp6OYU_000060,helicopter,False,-
+Ac1hVfp6OYU_000060,wind noise,False,A
+Ac1hVfp6OYU_000060,wind rustling leaves,False,-
+AlZUmhHgF8g_000008,chipmunk chirping,True,AV
+AlZUmhHgF8g_000008,"female speech, woman speaking",False,-
+AlZUmhHgF8g_000008,"male speech, man speaking",False,A
+AlZUmhHgF8g_000008,wind noise,False,-
+ApNcj8ijJlo_000030,chainsawing trees,True,AV
+ApNcj8ijJlo_000030,"female speech, woman speaking",False,-
+ApNcj8ijJlo_000030,"male speech, man speaking",False,-
+ApNcj8ijJlo_000030,people screaming,False,A
+AraV2kvytIY_000024,airplane,False,AV
+AraV2kvytIY_000024,airplane flyby,True,AV
+AraV2kvytIY_000024,wind noise,False,-
+AwJ8orGuOXg_000000,car passing by,False,-
+AwJ8orGuOXg_000000,"child speech, kid speaking",False,-
+AwJ8orGuOXg_000000,driving buses,True,AV
+AwJ8orGuOXg_000000,"male speech, man speaking",False,A
+AwJ8orGuOXg_000000,people giggling,False,A
+AwUYzbOW5WQ_000006,playing tambourine,True,AV
+BQ86IY0M860_000030,"female speech, woman speaking",False,A
+BQ86IY0M860_000030,"male speech, man speaking",False,AV
+BQ86IY0M860_000030,ocean burbling,False,AV
+BQ86IY0M860_000030,sailing,True,AV
+BQ86IY0M860_000030,sea waves,False,AV
+BQ86IY0M860_000030,splashing water,False,-
+BQ86IY0M860_000030,wind noise,False,-
+BZRZcFA9Dr4_000260,bull bellowing,False,A
+BZRZcFA9Dr4_000260,cattle mooing,True,A
+Bg2XkNb5LZE_000140,orchestra,False,-
+Bg2XkNb5LZE_000140,playing drum kit,False,A
+Bg2XkNb5LZE_000140,playing french horn,True,AV
+Bg2XkNb5LZE_000140,"playing violin, fiddle",False,AV
+BiNbPvdPthY_000030,dog barking,False,-
+BiNbPvdPthY_000030,dog bow-wow,False,AV
+BiNbPvdPthY_000030,dog growling,False,-
+BiNbPvdPthY_000030,dog whimpering,True,AV
+BiNbPvdPthY_000030,"male speech, man speaking",False,AV
+Bk34jgx0Vo4_000356,"bird chirping, tweeting",False,AV
+Bk34jgx0Vo4_000356,wind noise,False,A
+Bk34jgx0Vo4_000356,wind rustling leaves,False,V
+Bk34jgx0Vo4_000356,wood thrush calling,True,AV
+BqCBBcWN9bw_000023,"male speech, man speaking",False,A
+BqCBBcWN9bw_000023,people battle cry,True,AV
+BqCBBcWN9bw_000023,people clapping,False,-
+BqCBBcWN9bw_000023,people crowd,False,-
+BqmRiPZgeVY_000296,air conditioning noise,False,-
+BqmRiPZgeVY_000296,"male speech, man speaking",False,AV
+BqmRiPZgeVY_000296,people cheering,False,-
+BqmRiPZgeVY_000296,people clapping,False,A
+BqmRiPZgeVY_000296,playing table tennis,True,AV
+C607Hi51zxg_000000,"railroad car, train wagon",True,AV
+C607Hi51zxg_000000,train whistling,False,A
+C9LzJZ1PpL0_000000,"bird chirping, tweeting",False,-
+C9LzJZ1PpL0_000000,car passing by,False,-
+C9LzJZ1PpL0_000000,civil defense siren,True,A
+CDABuTQLNe8_000140,door slamming,False,-
+CDABuTQLNe8_000140,"male speech, man speaking",False,A
+CDABuTQLNe8_000140,opening or closing drawers,True,AV
+CIAd34BDDHg_000015,scuba diving,False,-
+CIAd34BDDHg_000015,sloshing water,False,AV
+CIAd34BDDHg_000015,underwater bubbling,True,AV
+CMCtge02AnU_000260,playing acoustic guitar,False,A
+CMCtge02AnU_000260,playing bass guitar,False,-
+CMCtge02AnU_000260,playing double bass,False,-
+CMCtge02AnU_000260,playing drum kit,False,AV
+CMCtge02AnU_000260,playing electric guitar,False,AV
+CMCtge02AnU_000260,playing hammond organ,True,AV
+CMCtge02AnU_000260,playing synthesizer,False,-
+Cah4MJiVUFI_000030,children shouting,False,AV
+Cah4MJiVUFI_000030,female singing,False,AV
+Cah4MJiVUFI_000030,male singing,False,AV
+Cah4MJiVUFI_000030,people booing,False,-
+Cah4MJiVUFI_000030,people cheering,False,-
+Cah4MJiVUFI_000030,people clapping,False,AV
+Cah4MJiVUFI_000030,people crowd,True,AV
+Cah4MJiVUFI_000030,people screaming,False,AV
+Cah4MJiVUFI_000030,people whistling,False,AV
+Cah4MJiVUFI_000030,playing bass guitar,False,AV
+Cah4MJiVUFI_000030,playing drum kit,False,AV
+Cah4MJiVUFI_000030,playing electric guitar,False,AV
+Cah4MJiVUFI_000030,playing trumpet,False,AV
+Ce1P47VwTAI_000030,"child speech, kid speaking",False,-
+Ce1P47VwTAI_000030,female singing,False,AV
+Ce1P47VwTAI_000030,"female speech, woman speaking",True,-
+Ce1P47VwTAI_000030,playing piano,False,A
+CgzmlbU6hsk_000030,male singing,False,A
+CgzmlbU6hsk_000030,"male speech, man speaking",False,-
+CgzmlbU6hsk_000030,playing banjo,True,AV
+Chi9u8htrm4_000230,female singing,False,-
+Chi9u8htrm4_000230,"female speech, woman speaking",False,AV
+Chi9u8htrm4_000230,hair dryer drying,True,AV
+Chi9u8htrm4_000230,"male speech, man speaking",False,A
+Chi9u8htrm4_000230,people giggling,False,A
+D1NDNFZGY7k_000040,"female speech, woman speaking",False,AV
+D1NDNFZGY7k_000040,"male speech, man speaking",False,AV
+D1NDNFZGY7k_000040,playing bass guitar,False,-
+D1NDNFZGY7k_000040,playing cymbal,True,A
+D1NDNFZGY7k_000040,playing drum kit,False,A
+D1NDNFZGY7k_000040,playing electric guitar,False,-
+D1NDNFZGY7k_000040,playing piano,False,-
+D1NDNFZGY7k_000040,playing synthesizer,False,-
+DNBpRJMEm4s_000030,"male speech, man speaking",False,A
+DNBpRJMEm4s_000030,playing electric guitar,True,AV
+DQRapqt_69c_000128,"male speech, man speaking",False,A
+DQRapqt_69c_000128,playing drum kit,False,-
+DQRapqt_69c_000128,playing electric guitar,False,-
+DQRapqt_69c_000128,sharpen knife,True,AV
+DUsivUkD3ik_000004,"male speech, man speaking",False,A
+DUsivUkD3ik_000004,ocean burbling,False,AV
+DUsivUkD3ik_000004,playing harp,False,-
+DUsivUkD3ik_000004,"rowboat, canoe, kayak rowing",True,AV
+DUsivUkD3ik_000004,sea waves,False,AV
+DUsivUkD3ik_000004,splashing water,False,-
+DV1C1XbdG7A_000220,playing accordion,False,-
+DV1C1XbdG7A_000220,playing double bass,False,-
+DV1C1XbdG7A_000220,playing harmonica,True,A
+DYVwPj_voRw_000030,"bird chirping, tweeting",False,AV
+DYVwPj_voRw_000030,goose honking,True,AV
+DYVwPj_voRw_000030,wind noise,False,-
+Daa2SyGiFBA_000361,"female speech, woman speaking",False,-
+Daa2SyGiFBA_000361,"male speech, man speaking",False,-
+Daa2SyGiFBA_000361,playing hockey,True,AV
+DcpPZ9pltNs_000137,cupboard opening or closing,True,V
+DcpPZ9pltNs_000137,door slamming,False,-
+DuewD1imTvQ_000019,sheep bleating,True,A
+E-hmA_v9ePI_000022,"male speech, man speaking",False,A
+E-hmA_v9ePI_000022,mouse squeaking,True,AV
+E2DcawleYIY_000030,playing drum kit,False,-
+E2DcawleYIY_000030,playing electronic organ,True,AV
+E2DcawleYIY_000030,playing synthesizer,False,V
+E3XIdP8kxwg_000110,"female speech, woman speaking",False,-
+E3XIdP8kxwg_000110,"male speech, man speaking",False,AV
+E3XIdP8kxwg_000110,people booing,False,-
+E3XIdP8kxwg_000110,skateboarding,True,AV
+E4duB2A-ces_000050,"bird chirping, tweeting",False,-
+E4duB2A-ces_000050,playing acoustic guitar,False,A
+E4duB2A-ces_000050,playing piano,False,-
+E4duB2A-ces_000050,sloshing water,False,-
+E4duB2A-ces_000050,splashing water,False,-
+E4duB2A-ces_000050,spraying water,False,-
+E4duB2A-ces_000050,squishing water,False,-
+E4duB2A-ces_000050,waterfall burbling,True,AV
+E86Oa92UDS4_000009,"male speech, man speaking",False,A
+E86Oa92UDS4_000009,mouse clicking,False,-
+E86Oa92UDS4_000009,mouse pattering,True,AV
+E9fvVHNgC7A_000102,"male speech, man speaking",False,A
+E9fvVHNgC7A_000102,people giggling,False,-
+E9fvVHNgC7A_000102,running electric fan,True,-
+E9ulxBBGUVc_000350,hail,False,-
+E9ulxBBGUVc_000350,orchestra,False,A
+E9ulxBBGUVc_000350,"playing violin, fiddle",False,A
+E9ulxBBGUVc_000350,raining,False,A
+E9ulxBBGUVc_000350,thunder,True,A
+E9ulxBBGUVc_000350,wind noise,False,-
+E9ulxBBGUVc_000350,wind rustling leaves,False,-
+EMGNyRa5pEc_000280,"child speech, kid speaking",False,AV
+EMGNyRa5pEc_000280,"female speech, woman speaking",False,-
+EMGNyRa5pEc_000280,playing bassoon,False,-
+EMGNyRa5pEc_000280,playing clarinet,False,A
+EMGNyRa5pEc_000280,playing glockenspiel,False,-
+EMGNyRa5pEc_000280,"playing marimba, xylophone",True,A
+EhhmtF1viOo_000076,"female speech, woman speaking",False,A
+EhhmtF1viOo_000076,skiing,True,AV
+EhhmtF1viOo_000076,wind noise,False,-
+EqgVljnECRY_000170,door slamming,False,-
+EqgVljnECRY_000170,opening or closing drawers,True,-
+EqgVljnECRY_000170,ripping paper,False,-
+EyEVKlDZtrw_000025,tap dancing,True,AV
+FDHKDDeamFw_000169,playing acoustic guitar,False,AV
+FDHKDDeamFw_000169,playing bass guitar,False,-
+FDHKDDeamFw_000169,playing guiro,True,AV
+FhOjRWQ8Ylw_000103,"male speech, man speaking",False,A
+FhOjRWQ8Ylw_000103,people booing,True,AV
+FhOjRWQ8Ylw_000103,people crowd,False,-
+FhOjRWQ8Ylw_000103,playing drum kit,False,-
+FhOjRWQ8Ylw_000103,playing synthesizer,False,-
+FhOjRWQ8Ylw_000103,rapping,False,-
+Fk4VP1Qo4so_000018,car engine idling,False,-
+Fk4VP1Qo4so_000018,"railroad car, train wagon",False,-
+Fk4VP1Qo4so_000018,train horning,True,-
+Fl_gvQ9bPvM_000129,eletric blender running,True,AV
+Fl_gvQ9bPvM_000129,"male speech, man speaking",False,A
+Fs462T7ODUQ_000030,"bird chirping, tweeting",False,-
+Fs462T7ODUQ_000030,sliding door,True,AV
+GI3Vdc5WHJA_000214,"bird chirping, tweeting",False,A
+GI3Vdc5WHJA_000214,warbler chirping,True,A
+GU782ddSBvk_000390,playing timpani,True,AV
+GkStiQ3hR5g_000220,"bird chirping, tweeting",False,A
+GkStiQ3hR5g_000220,chicken clucking,False,-
+GkStiQ3hR5g_000220,chicken crowing,True,AV
+GkStiQ3hR5g_000220,wind noise,False,-
+GkStiQ3hR5g_000220,wind rustling leaves,False,-
+Gp8F6AaP1OM_000053,"child speech, kid speaking",False,AV
+Gp8F6AaP1OM_000053,children shouting,True,-
+Gp8F6AaP1OM_000053,"female speech, woman speaking",False,A
+Gp8F6AaP1OM_000053,people crowd,False,-
+GxTD3hqJoM0_000146,"male speech, man speaking",False,A
+GxTD3hqJoM0_000146,writing on blackboard with chalk,True,-
+H9nKSRtcxiY_000080,"bird chirping, tweeting",False,A
+H9nKSRtcxiY_000080,turkey gobbling,True,AV
+H9nKSRtcxiY_000080,wind noise,False,-
+HeLV1buhzpI_000030,baby laughter,False,AV
+HeLV1buhzpI_000030,dog barking,False,A
+HeLV1buhzpI_000030,people belly laughing,True,AV
+HeLV1buhzpI_000030,people sniggering,False,AV
+HzXWXYxXyYA_000050,male singing,False,A
+HzXWXYxXyYA_000050,playing bass guitar,True,AV
+HzXWXYxXyYA_000050,playing drum kit,False,A
+I5f96kvSXzU_000004,air horn,True,AV
+I5f96kvSXzU_000004,foghorn,False,AV
+I5f96kvSXzU_000004,"vehicle horn, car horn, honking",False,-
+ILv7AQF-ltI_000030,"bird chirping, tweeting",True,AV
+ILv7AQF-ltI_000030,owl hooting,False,AV
+ILv7AQF-ltI_000030,wind noise,False,-
+IMWPb20akf8_000051,playing drum kit,False,-
+IMWPb20akf8_000051,playing synthesizer,False,A
+IMWPb20akf8_000051,playing timpani,False,-
+IMWPb20akf8_000051,slot machine,True,AV
+IiCNAp2sR9c_000030,beat boxing,False,-
+IiCNAp2sR9c_000030,child singing,False,AV
+IiCNAp2sR9c_000030,female singing,False,AV
+IiCNAp2sR9c_000030,male singing,False,AV
+IiCNAp2sR9c_000030,people humming,False,AV
+IiCNAp2sR9c_000030,singing choir,True,AV
+Ind-moQb3tc_000006,"bird chirping, tweeting",False,A
+Ind-moQb3tc_000006,turkey gobbling,True,A
+Iuq6qxeDVR0_000190,"bird chirping, tweeting",False,AV
+Iuq6qxeDVR0_000190,francolin calling,True,AV
+Iuq6qxeDVR0_000190,"male speech, man speaking",False,A
+JEbcpvPiz5s_000280,"bird chirping, tweeting",False,AV
+JEbcpvPiz5s_000280,black capped chickadee calling,True,AV
+JEbcpvPiz5s_000280,wind noise,False,-
+JV_iMt0idTU_000019,elk bugling,True,AV
+JV_iMt0idTU_000019,wind noise,False,-
+JgxnHxZXzrI_000011,fireworks banging,False,-
+JgxnHxZXzrI_000011,lighting firecrackers,True,-
+JrbVM5zjdug_000030,"male speech, man speaking",False,A
+JrbVM5zjdug_000030,playing electric guitar,False,AV
+JrbVM5zjdug_000030,tapping guitar,True,AV
+JzRb1OVpat0_000030,playing theremin,True,A
+JzRb1OVpat0_000030,"playing violin, fiddle",False,-
+K2TcJFtuvDE_000006,children shouting,False,-
+K2TcJFtuvDE_000006,foghorn,True,-
+K2TcJFtuvDE_000006,orchestra,False,-
+K2TcJFtuvDE_000006,playing acoustic guitar,False,-
+K2TcJFtuvDE_000006,playing bass guitar,False,-
+K2TcJFtuvDE_000006,playing harp,False,A
+K2TcJFtuvDE_000006,playing piano,False,-
+K2TcJFtuvDE_000006,"playing violin, fiddle",False,A
+K2nicVw_XRM_000089,children shouting,False,AV
+K2nicVw_XRM_000089,orchestra,False,-
+K2nicVw_XRM_000089,people booing,False,-
+K2nicVw_XRM_000089,people cheering,True,AV
+K2nicVw_XRM_000089,people clapping,False,AV
+K2nicVw_XRM_000089,people crowd,False,-
+K2nicVw_XRM_000089,people screaming,False,AV
+K2nicVw_XRM_000089,people whistling,False,AV
+K2nicVw_XRM_000089,playing bass guitar,False,-
+K2nicVw_XRM_000089,playing drum kit,False,A
+K2nicVw_XRM_000089,playing trumpet,False,A
+KVuoi20iigU_000280,lighting firecrackers,True,AV
+KVuoi20iigU_000280,wind noise,False,-
+KiA1NLu5MCo_000001,snake hissing,True,AV
+KiyyzCJy3Vk_000077,"female speech, woman speaking",False,AV
+KiyyzCJy3Vk_000077,otter growling,True,V
+KiyyzCJy3Vk_000077,playing piano,False,-
+KmBaE7ozWow_000030,"female speech, woman speaking",False,-
+KmBaE7ozWow_000030,male singing,False,AV
+KmBaE7ozWow_000030,"male speech, man speaking",False,-
+KmBaE7ozWow_000030,playing bass guitar,False,-
+KmBaE7ozWow_000030,playing ukulele,True,AV
+Kp3-Drt61_M_000011,baby laughter,False,AV
+Kp3-Drt61_M_000011,"female speech, woman speaking",False,AV
+Kp3-Drt61_M_000011,people belly laughing,False,-
+Kp3-Drt61_M_000011,people giggling,True,AV
+L7E5Tv357Ys_000040,air conditioning noise,True,AV
+L7E5Tv357Ys_000040,wind noise,False,-
+LWKaNv6asYM_000264,cell phone buzzing,True,-
+LWKaNv6asYM_000264,"male speech, man speaking",False,A
+Lhuh4mKOTqY_000109,"female speech, woman speaking",False,-
+Lhuh4mKOTqY_000109,foghorn,True,-
+Lhuh4mKOTqY_000109,male singing,False,A
+Lhuh4mKOTqY_000109,"male speech, man speaking",False,V
+Lhuh4mKOTqY_000109,playing acoustic guitar,False,-
+Lhuh4mKOTqY_000109,playing bass guitar,False,A
+Lhuh4mKOTqY_000109,playing bassoon,False,-
+Lhuh4mKOTqY_000109,playing electric guitar,False,-
+Lhuh4mKOTqY_000109,playing saxophone,False,-
+Lhuh4mKOTqY_000109,"playing violin, fiddle",False,A
+LsphcdJi4Ss_000025,cell phone buzzing,True,AV
+LsphcdJi4Ss_000025,"male speech, man speaking",False,A
+M14YsutGzIk_000005,"bird chirping, tweeting",False,AV
+M14YsutGzIk_000005,cuckoo bird calling,True,AV
+M14YsutGzIk_000005,wind noise,False,-
+M1pPtg6a_g8_000230,female singing,False,-
+M1pPtg6a_g8_000230,"female speech, woman speaking",False,A
+M1pPtg6a_g8_000230,male singing,False,A
+M1pPtg6a_g8_000230,"male speech, man speaking",False,-
+M1pPtg6a_g8_000230,playing drum kit,False,A
+M1pPtg6a_g8_000230,playing piano,True,A
+M1pPtg6a_g8_000230,playing synthesizer,False,-
+M1pPtg6a_g8_000230,rapping,False,-
+MCkQ9sVaOhw_000010,"bird chirping, tweeting",False,AV
+MCkQ9sVaOhw_000010,bird wings flapping,True,AV
+MCkQ9sVaOhw_000010,people whistling,False,-
+MDx46d28I20_000026,"child speech, kid speaking",False,A
+MDx46d28I20_000026,people eating,False,-
+MDx46d28I20_000026,people eating apple,False,-
+MDx46d28I20_000026,playing darts,True,-
+MDx46d28I20_000026,playing piano,False,-
+MDx46d28I20_000026,playing synthesizer,False,-
+MWWihdWE2FE_000060,"female speech, woman speaking",False,A
+MWWihdWE2FE_000060,mouse clicking,False,A
+MWWihdWE2FE_000060,typing on computer keyboard,True,A
+Mr--N4d6lIM_000323,"child speech, kid speaking",False,-
+Mr--N4d6lIM_000323,"male speech, man speaking",True,AV
+Mr--N4d6lIM_000323,playing drum kit,False,A
+Mr87MY9Vdiw_000002,sea lion barking,True,AV
+Mr87MY9Vdiw_000002,splashing water,False,AV
+Mr87MY9Vdiw_000002,waterfall burbling,False,AV
+NKvL6apPfhw_000000,"bird chirping, tweeting",False,AV
+NKvL6apPfhw_000000,owl hooting,True,AV
+NKvL6apPfhw_000000,playing acoustic guitar,False,A
+NKvL6apPfhw_000000,playing bass guitar,False,A
+NKvL6apPfhw_000000,playing drum kit,False,A
+NKvL6apPfhw_000000,playing electric guitar,False,A
+NMQiKrTkl10_000039,"male speech, man speaking",False,A
+NMQiKrTkl10_000039,ocean burbling,False,-
+NMQiKrTkl10_000039,playing synthesizer,False,-
+NMQiKrTkl10_000039,sea waves,False,V
+NMQiKrTkl10_000039,volcano explosion,True,AV
+NMQiKrTkl10_000039,wind noise,False,-
+NjeQbXpuIIk_000081,underwater bubbling,True,AV
+Nq-jBzkOKwA_000004,"male speech, man speaking",False,A
+Nq-jBzkOKwA_000004,opening or closing car doors,True,-
+NvArhDtBvcg_000030,singing bowl,True,A
+O5v1-O5A-f0_000410,baby crying,False,A
+O5v1-O5A-f0_000410,children shouting,False,-
+O5v1-O5A-f0_000410,"female speech, woman speaking",False,A
+O5v1-O5A-f0_000410,people sobbing,True,-
+O8S1mItzKFk_000115,disc scratching,True,-
+O8S1mItzKFk_000115,female singing,False,-
+O8S1mItzKFk_000115,playing bass guitar,False,A
+O8S1mItzKFk_000115,playing drum kit,False,A
+O8S1mItzKFk_000115,playing synthesizer,False,A
+O8S1mItzKFk_000115,singing choir,False,-
+Oc9azgD3RJ8_000030,air conditioning noise,False,-
+Oc9azgD3RJ8_000030,baby babbling,False,-
+Oc9azgD3RJ8_000030,baby laughter,False,AV
+Oc9azgD3RJ8_000030,female singing,False,A
+Oc9azgD3RJ8_000030,"male speech, man speaking",False,-
+Oc9azgD3RJ8_000030,people babbling,True,AV
+OifvajLsn5I_000030,"bird chirping, tweeting",False,-
+OifvajLsn5I_000030,cricket chirping,False,-
+OifvajLsn5I_000030,horse neighing,True,AV
+OifvajLsn5I_000030,playing ukulele,False,-
+OrVb-GSGKPI_000032,"bee, wasp, etc. buzzing",False,A
+OrVb-GSGKPI_000032,"fly, housefly buzzing",True,AV
+OrVb-GSGKPI_000032,mosquito buzzing,False,-
+OrVb-GSGKPI_000032,people screaming,False,-
+OrVb-GSGKPI_000032,people slapping,False,-
+PEbtGD3Tgpo_000062,cell phone buzzing,True,-
+PEbtGD3Tgpo_000062,"male speech, man speaking",False,A
+PEbtGD3Tgpo_000062,playing piano,False,-
+PEbtGD3Tgpo_000062,playing synthesizer,False,-
+PLg7FE5Vp58_000184,scuba diving,True,AV
+PLg7FE5Vp58_000184,sloshing water,False,-
+PLg7FE5Vp58_000184,squishing water,False,-
+PLg7FE5Vp58_000184,underwater bubbling,False,AV
+P_BjFvh__1I_000020,"bird chirping, tweeting",False,A
+P_BjFvh__1I_000020,gibbon howling,True,AV
+P_BjFvh__1I_000020,wind noise,False,-
+P_BjFvh__1I_000020,wind rustling leaves,False,A
+Ppqv5jc1wUw_000314,"female speech, woman speaking",False,A
+Ppqv5jc1wUw_000314,"male speech, man speaking",False,AV
+Ppqv5jc1wUw_000314,people crowd,False,-
+Ppqv5jc1wUw_000314,people giggling,False,-
+Ppqv5jc1wUw_000314,people slapping,False,-
+Ppqv5jc1wUw_000314,people whistling,False,A
+Ppqv5jc1wUw_000314,playing volleyball,True,AV
+Ppqv5jc1wUw_000314,wind noise,False,-
+PtgNHlRcC60_000030,car engine idling,False,-
+PtgNHlRcC60_000030,car engine knocking,False,-
+PtgNHlRcC60_000030,car engine starting,False,-
+PtgNHlRcC60_000030,eating with cutlery,False,-
+PtgNHlRcC60_000030,"engine accelerating, revving, vroom",False,-
+PtgNHlRcC60_000030,opening or closing car doors,False,A
+PtgNHlRcC60_000030,people eating,True,-
+PtgNHlRcC60_000030,people eating apple,False,-
+PtgNHlRcC60_000030,people eating crisps,False,-
+PwHZ4df5G7w_000030,male singing,False,A
+PwHZ4df5G7w_000030,people farting,True,A
+PwHZ4df5G7w_000030,playing acoustic guitar,False,A
+PwHZ4df5G7w_000030,playing electric guitar,False,-
+Q2m7w_aktCo_000000,car passing by,False,AV
+Q2m7w_aktCo_000000,"ice cream truck, ice cream van",True,AV
+Q2m7w_aktCo_000000,raining,False,-
+Q2m7w_aktCo_000000,sloshing water,False,-
+Q2m7w_aktCo_000000,splashing water,False,AV
+Q8krGIiCBBQ_000050,airplane,True,-
+Q8krGIiCBBQ_000050,female singing,False,A
+Q8krGIiCBBQ_000050,male singing,False,A
+Q8krGIiCBBQ_000050,"male speech, man speaking",False,AV
+Q8krGIiCBBQ_000050,playing bass guitar,False,-
+Q8krGIiCBBQ_000050,playing drum kit,False,A
+Q8krGIiCBBQ_000050,playing electric guitar,False,-
+Q8krGIiCBBQ_000050,playing synthesizer,False,-
+QKu30d-ZlQo_000113,chimpanzee pant-hooting,True,-
+QKu30d-ZlQo_000113,playing drum kit,False,-
+QKu30d-ZlQo_000113,playing synthesizer,False,A
+QLEXmKz-MV4_000070,"cattle, bovinae cowbell",False,-
+QLEXmKz-MV4_000070,playing bass guitar,False,-
+QLEXmKz-MV4_000070,playing cymbal,True,AV
+QLEXmKz-MV4_000070,playing drum kit,False,AV
+QLEXmKz-MV4_000070,playing snare drum,False,AV
+Q_FvbcPieNo_000030,basketball bounce,True,AV
+Q_FvbcPieNo_000030,male singing,False,-
+Q_FvbcPieNo_000030,"male speech, man speaking",False,A
+Q_FvbcPieNo_000030,people booing,False,-
+Q_FvbcPieNo_000030,people cheering,False,AV
+Q_FvbcPieNo_000030,people clapping,False,-
+Q_FvbcPieNo_000030,people crowd,False,AV
+Q_FvbcPieNo_000030,people whistling,False,A
+Qd9hSBBfXq4_000776,playing bassoon,False,-
+Qd9hSBBfXq4_000776,playing cello,False,-
+Qd9hSBBfXq4_000776,playing clarinet,False,-
+Qd9hSBBfXq4_000776,playing flute,False,AV
+Qd9hSBBfXq4_000776,playing oboe,True,AV
+Qd9hSBBfXq4_000776,"playing violin, fiddle",False,AV
+QlH985MWzAQ_000039,"bird chirping, tweeting",False,-
+QlH985MWzAQ_000039,chimpanzee pant-hooting,True,V
+QlH985MWzAQ_000039,cricket chirping,False,A
+QlH985MWzAQ_000039,wind noise,False,-
+RIQzc8Gx0q4_000026,"bird chirping, tweeting",False,A
+RIQzc8Gx0q4_000026,electric grinder grinding,True,AV
+RRpcIanKONA_000025,"female speech, woman speaking",False,A
+RRpcIanKONA_000025,smoke detector beeping,True,-
+RVKBNv4mc6Y_000107,volcano explosion,True,-
+RVKBNv4mc6Y_000107,wind noise,False,A
+RXSyVeHp2yA_000000,cap gun shooting,True,AV
+RYia-H9Hm88_000000,people booing,False,-
+RYia-H9Hm88_000000,people cheering,False,A
+RYia-H9Hm88_000000,people clapping,True,A
+RYia-H9Hm88_000000,people crowd,False,-
+RYia-H9Hm88_000000,people whistling,False,-
+RgEEH6TgOEI_000020,playing gong,True,-
+RgEEH6TgOEI_000020,playing steelpan,False,-
+RgEEH6TgOEI_000020,playing synthesizer,False,-
+Rj8hpFBBSi0_000092,"male speech, man speaking",False,AV
+Rj8hpFBBSi0_000092,snake rattling,True,AV
+RoS465ZH1lg_000013,cat growling,False,AV
+RoS465ZH1lg_000013,cat hissing,True,AV
+RoS465ZH1lg_000013,cat meowing,False,AV
+RoS465ZH1lg_000013,cat purring,False,-
+RoS465ZH1lg_000013,"male speech, man speaking",False,-
+RuCO6UGsRHI_000313,barn swallow calling,True,AV
+RuCO6UGsRHI_000313,"bird chirping, tweeting",False,AV
+RuCO6UGsRHI_000313,bird wings flapping,False,-
+RuCO6UGsRHI_000313,wind noise,False,-
+S-rvkcb7xv8_000080,church bell ringing,True,A
+S-rvkcb7xv8_000080,"female speech, woman speaking",False,A
+S-rvkcb7xv8_000080,"male speech, man speaking",False,A
+S-rvkcb7xv8_000080,people whispering,False,A
+S1glY1D9qDU_000035,hedge trimmer running,True,AV
+S6R2DpF6zzM_000060,baltimore oriole calling,True,AV
+S6R2DpF6zzM_000060,"bird chirping, tweeting",False,AV
+S6R2DpF6zzM_000060,bird wings flapping,False,V
+S6R2DpF6zzM_000060,wind rustling leaves,False,-
+SJ9TY-iqD9Q_000010,beat boxing,False,-
+SJ9TY-iqD9Q_000010,child singing,True,AV
+SJ9TY-iqD9Q_000010,female singing,False,A
+SJ9TY-iqD9Q_000010,male singing,False,-
+SJ9TY-iqD9Q_000010,people humming,False,A
+SJ9TY-iqD9Q_000010,playing drum kit,False,-
+SJ9TY-iqD9Q_000010,playing electric guitar,False,-
+SJ9TY-iqD9Q_000010,playing synthesizer,False,-
+SJ9TY-iqD9Q_000010,singing choir,False,-
+SMAOB1Wt6QQ_000426,playing tennis,True,AV
+SMAOB1Wt6QQ_000426,wind noise,False,-
+SUFOgc9Pkd8_000030,dog barking,False,AV
+SUFOgc9Pkd8_000030,dog baying,False,-
+SUFOgc9Pkd8_000030,dog bow-wow,False,AV
+SUFOgc9Pkd8_000030,dog growling,True,AV
+SUFOgc9Pkd8_000030,dog whimpering,False,-
+SUFOgc9Pkd8_000030,"female speech, woman speaking",False,A
+SUFOgc9Pkd8_000030,"male speech, man speaking",False,A
+SUFOgc9Pkd8_000030,people giggling,False,A
+S_yxvb7P0B4_000007,car passing by,False,-
+S_yxvb7P0B4_000007,people screaming,False,AV
+S_yxvb7P0B4_000007,train horning,True,-
+S_yxvb7P0B4_000007,"vehicle horn, car horn, honking",False,AV
+Sgdq22nyfTM_000240,"railroad car, train wagon",False,-
+Sgdq22nyfTM_000240,"subway, metro, underground",True,AV
+Sgdq22nyfTM_000240,train wheels squealing,False,AV
+SgfHJ5fkMiY_000040,bull bellowing,False,-
+SgfHJ5fkMiY_000040,"cattle, bovinae cowbell",True,-
+SgfHJ5fkMiY_000040,cow lowing,False,-
+SgfHJ5fkMiY_000040,playing bass drum,False,AV
+SgfHJ5fkMiY_000040,playing cymbal,False,AV
+SgfHJ5fkMiY_000040,playing drum kit,False,AV
+SgfHJ5fkMiY_000040,playing snare drum,False,AV
+SzhOVP7BXUE_000000,"bird chirping, tweeting",False,-
+SzhOVP7BXUE_000000,bird squawking,False,-
+SzhOVP7BXUE_000000,crow cawing,True,AV
+SzhOVP7BXUE_000000,male singing,False,-
+SzhOVP7BXUE_000000,"male speech, man speaking",False,A
+SzhOVP7BXUE_000000,rapping,False,-
+T0x6z65J-_M_000334,ocean burbling,False,-
+T0x6z65J-_M_000334,sea waves,False,-
+T0x6z65J-_M_000334,sloshing water,False,-
+T0x6z65J-_M_000334,splashing water,False,AV
+T0x6z65J-_M_000334,spraying water,False,-
+T0x6z65J-_M_000334,swimming,True,AV
+TGrNNgXVp44_000077,"child speech, kid speaking",False,AV
+TGrNNgXVp44_000077,"female speech, woman speaking",False,-
+TGrNNgXVp44_000077,lip smacking,False,-
+TGrNNgXVp44_000077,people eating,False,-
+TGrNNgXVp44_000077,people eating crisps,True,AV
+TGrNNgXVp44_000077,people whispering,False,AV
+TkrtTUPxHNI_000030,playing harpsichord,True,AV
+Tlzma5yXcgM_000287,baby babbling,False,-
+Tlzma5yXcgM_000287,"male speech, man speaking",False,A
+Tlzma5yXcgM_000287,writing on blackboard with chalk,True,-
+TpU5dZlW2pg_000040,"male speech, man speaking",False,AV
+TpU5dZlW2pg_000040,planing timber,True,V
+TzVFAvWdiV0_000030,"male speech, man speaking",False,A
+TzVFAvWdiV0_000030,"playing steel guitar, slide guitar",True,AV
+UP30sk9je00_000049,tractor digging,True,AV
+UP30sk9je00_000049,"vehicle horn, car horn, honking",False,A
+UP30sk9je00_000049,wind noise,False,A
+UWpt-VrUroI_000000,ice cracking,True,A
+UYDvZc4lWYk_000240,"male speech, man speaking",False,A
+UYDvZc4lWYk_000240,playing gong,True,A
+UkQRD1PBszA_000454,"child speech, kid speaking",False,AV
+UkQRD1PBszA_000454,"male speech, man speaking",False,-
+UkQRD1PBszA_000454,playing darts,True,-
+UkQRD1PBszA_000454,typing on computer keyboard,False,AV
+UoSID1KzWuI_000030,playing acoustic guitar,True,AV
+UoSID1KzWuI_000030,"playing steel guitar, slide guitar",False,-
+Upq4yFKwiTM_000024,"bird chirping, tweeting",False,A
+Upq4yFKwiTM_000024,wind noise,False,A
+Upq4yFKwiTM_000024,woodpecker pecking tree,True,AV
+Uq-owMVP9qI_000030,"female speech, woman speaking",False,AV
+Uq-owMVP9qI_000030,people whispering,True,AV
+Uw8xdpugGNc_000060,"male speech, man speaking",False,A
+Uw8xdpugGNc_000060,opening or closing car electric windows,True,AV
+VFXf1DTi2IA_000383,"electric shaver, electric razor shaving",True,AV
+W2aR6tTqGx0_000090,car engine idling,False,AV
+W2aR6tTqGx0_000090,car passing by,False,-
+W2aR6tTqGx0_000090,"engine accelerating, revving, vroom",False,AV
+W2aR6tTqGx0_000090,"female speech, woman speaking",False,A
+W2aR6tTqGx0_000090,playing bass guitar,False,-
+W2aR6tTqGx0_000090,playing drum kit,False,-
+W2aR6tTqGx0_000090,playing synthesizer,False,-
+W2aR6tTqGx0_000090,skidding,True,AV
+W6KsrR_Nkrk_000000,metronome,True,AV
+W6KsrR_Nkrk_000000,playing piano,False,AV
+W9CPGD_lR7g_000005,air horn,True,-
+W9CPGD_lR7g_000005,dog barking,False,A
+W9CPGD_lR7g_000005,foghorn,False,-
+W9CPGD_lR7g_000005,"vehicle horn, car horn, honking",False,AV
+WAztA-Iqb4g_000030,male singing,False,AV
+WAztA-Iqb4g_000030,"male speech, man speaking",False,-
+WAztA-Iqb4g_000030,playing bagpipes,True,AV
+WetKCilV0Zc_000230,chopping wood,True,AV
+WetKCilV0Zc_000230,"engine accelerating, revving, vroom",False,-
+WetKCilV0Zc_000230,"male speech, man speaking",False,-
+WkavReH4LE0_000020,cricket chirping,False,-
+WkavReH4LE0_000020,frog croaking,True,AV
+WkavReH4LE0_000020,"male speech, man speaking",False,-
+Wl2iTlhjKls_000033,playing erhu,True,AV
+Wl2iTlhjKls_000033,playing piano,False,AV
+Wqux-4IupdU_000112,playing djembe,True,AV
+Wur2SkL8EDk_000030,"bird chirping, tweeting",False,-
+Wur2SkL8EDk_000030,car engine knocking,True,AV
+Wur2SkL8EDk_000030,"male speech, man speaking",False,A
+X3wyXjui7ac_000213,orchestra,False,AV
+X3wyXjui7ac_000213,playing bass drum,False,-
+X3wyXjui7ac_000213,playing bassoon,False,AV
+X3wyXjui7ac_000213,playing clarinet,False,-
+X3wyXjui7ac_000213,playing cymbal,False,-
+X3wyXjui7ac_000213,playing flute,False,AV
+X3wyXjui7ac_000213,playing oboe,False,-
+X3wyXjui7ac_000213,playing saxophone,False,-
+X3wyXjui7ac_000213,playing snare drum,False,AV
+X3wyXjui7ac_000213,playing trombone,False,AV
+X3wyXjui7ac_000213,playing trumpet,False,AV
+X3wyXjui7ac_000213,playing tympani,True,AV
+XCiz7m7HQrs_000120,cat caterwauling,True,-
+XCiz7m7HQrs_000120,cat growling,False,-
+XCiz7m7HQrs_000120,cat hissing,False,-
+XCiz7m7HQrs_000120,cat meowing,False,-
+XCiz7m7HQrs_000120,cat purring,False,-
+XCiz7m7HQrs_000120,"female speech, woman speaking",False,AV
+XCiz7m7HQrs_000120,people giggling,False,AV
+XDWakm0T8fY_000519,dog barking,False,-
+XDWakm0T8fY_000519,dog baying,True,AV
+XDWakm0T8fY_000519,dog bow-wow,False,AV
+XDWakm0T8fY_000519,dog growling,False,AV
+XDWakm0T8fY_000519,dog whimpering,False,AV
+XDWakm0T8fY_000519,"male speech, man speaking",False,A
+XDWakm0T8fY_000519,wind rustling leaves,False,-
+XQHs8qK9HPA_000082,eletric blender running,False,-
+XQHs8qK9HPA_000082,"engine accelerating, revving, vroom",False,-
+XQHs8qK9HPA_000082,"female speech, woman speaking",False,A
+XQHs8qK9HPA_000082,"ice cream truck, ice cream van",True,-
+XQHs8qK9HPA_000082,playing drum kit,False,A
+XQHs8qK9HPA_000082,playing synthesizer,False,A
+XQoTMdWSzb8_000370,airplane,False,-
+XQoTMdWSzb8_000370,"bird chirping, tweeting",False,-
+XQoTMdWSzb8_000370,"child speech, kid speaking",False,-
+XQoTMdWSzb8_000370,"male speech, man speaking",False,A
+XQoTMdWSzb8_000370,shot football,True,AV
+XZbFXz54Suo_000000,"male speech, man speaking",False,A
+XZbFXz54Suo_000000,"playing steel guitar, slide guitar",True,AV
+XaIep0xC8BA_000117,playing congas,False,-
+XaIep0xC8BA_000117,playing timbales,True,AV
+XpYGqiG8tDc_000107,"bird chirping, tweeting",False,A
+XpYGqiG8tDc_000107,"male speech, man speaking",False,A
+XpYGqiG8tDc_000107,mynah bird singing,True,A
+XxSqS6lv2FQ_000070,air horn,True,A
+XxSqS6lv2FQ_000070,car passing by,False,AV
+XxSqS6lv2FQ_000070,"engine accelerating, revving, vroom",False,-
+XxSqS6lv2FQ_000070,"female speech, woman speaking",False,-
+XxSqS6lv2FQ_000070,foghorn,False,-
+XxSqS6lv2FQ_000070,playing piano,False,A
+Y7aU3aCEf5A_000030,playing harpsichord,True,AV
+YCfGy7J2oFo_000051,playing djembe,True,AV
+YM27M-R0kIA_000000,horse clip-clop,False,A
+YM27M-R0kIA_000000,horse neighing,True,AV
+YM27M-R0kIA_000000,"male speech, man speaking",False,-
+YNv7mzbUUHc_000050,playing electric guitar,True,A
+YNwgT_8Vniw_000018,air horn,True,-
+YNwgT_8Vniw_000018,car passing by,False,-
+YNwgT_8Vniw_000018,foghorn,False,-
+YNwgT_8Vniw_000018,"vehicle horn, car horn, honking",False,AV
+Ykv1CiXNXLQ_000134,female singing,False,AV
+Ykv1CiXNXLQ_000134,playing accordion,False,A
+Ykv1CiXNXLQ_000134,playing bass guitar,False,-
+Ykv1CiXNXLQ_000134,playing drum kit,False,A
+Ykv1CiXNXLQ_000134,playing synthesizer,False,-
+Ykv1CiXNXLQ_000134,yodelling,True,AV
+YrH0TXyYSNM_000010,"bird chirping, tweeting",False,A
+YrH0TXyYSNM_000010,dog barking,False,-
+YrH0TXyYSNM_000010,"male speech, man speaking",False,A
+YrH0TXyYSNM_000010,mouse squeaking,True,AV
+ZJOblt2XUJI_000004,"female speech, woman speaking",False,A
+ZJOblt2XUJI_000004,"fly, housefly buzzing",False,-
+ZJOblt2XUJI_000004,"male speech, man speaking",False,A
+ZJOblt2XUJI_000004,mosquito buzzing,True,AV
+ZJOblt2XUJI_000004,playing drum kit,False,-
+ZJOblt2XUJI_000004,playing electric guitar,False,-
+ZJOblt2XUJI_000004,wind chime,False,-
+ZZO50JTetDE_000580,ambulance siren,True,A
+ZZO50JTetDE_000580,cap gun shooting,False,-
+ZZO50JTetDE_000580,car passing by,False,AV
+ZZO50JTetDE_000580,"engine accelerating, revving, vroom",False,-
+ZZO50JTetDE_000580,"male speech, man speaking",False,-
+ZZO50JTetDE_000580,people screaming,False,-
+ZZO50JTetDE_000580,police radio chatter,False,-
+_-7I00cZUE0_000064,"male speech, man speaking",False,A
+_-7I00cZUE0_000064,"motorboat, speedboat acceleration",True,AV
+_-7I00cZUE0_000064,playing bass guitar,False,-
+_-7I00cZUE0_000064,playing drum kit,False,A
+_-7I00cZUE0_000064,playing electric guitar,False,A
+_-7I00cZUE0_000064,sea waves,False,-
+_-7I00cZUE0_000064,sloshing water,False,-
+_-7I00cZUE0_000064,splashing water,False,-
+_-7I00cZUE0_000064,spraying water,False,-
+_-_5kbw2Mcw_000000,"male speech, man speaking",False,A
+_-_5kbw2Mcw_000000,people coughing,True,AV
+_-_5kbw2Mcw_000000,people giggling,False,-
+_-_5kbw2Mcw_000000,people nose blowing,False,-
+_4NEAgqguN0_000220,church bell ringing,True,AV
+_Bih7lCMSz8_000223,"female speech, woman speaking",False,AV
+_Bih7lCMSz8_000223,"male speech, man speaking",False,AV
+_Bih7lCMSz8_000223,people coughing,False,-
+_Bih7lCMSz8_000223,people eating noodle,False,V
+_Bih7lCMSz8_000223,people nose blowing,True,AV
+_Bih7lCMSz8_000223,people slurping,False,-
+_RLsXrr0fQo_000080,male singing,False,AV
+_RLsXrr0fQo_000080,playing acoustic guitar,True,AV
+_Zl_z4n_T9M_000471,playing bass drum,False,-
+_Zl_z4n_T9M_000471,playing clarinet,False,A
+_Zl_z4n_T9M_000471,playing cymbal,False,-
+_Zl_z4n_T9M_000471,playing drum kit,True,AV
+_Zl_z4n_T9M_000471,playing snare drum,False,-
+_Zl_z4n_T9M_000471,playing timbales,False,AV
+_Zl_z4n_T9M_000471,playing timpani,False,-
+_Zl_z4n_T9M_000471,playing trumpet,False,-
+_mGrwBl_BMw_000010,shot football,False,V
+_mGrwBl_BMw_000010,singing bowl,True,A
+_vt5Pxi-7BQ_000452,planing timber,True,AV
+_wNC03n2xmg_000211,playing bongo,True,AV
+a4GXcNNy5ZY_000003,telephone bell ringing,True,AV
+a9nYajr1QhQ_000087,arc welding,True,AV
+acLR8eDYB7A_000072,chinchilla barking,True,AV
+amEW4O2Z350_000035,"female speech, woman speaking",False,-
+amEW4O2Z350_000035,"male speech, man speaking",False,A
+amEW4O2Z350_000035,people sneezing,False,-
+amEW4O2Z350_000035,playing glockenspiel,True,AV
+amunlTZVHo8_000003,strike lighter,True,V
+b93GiuJ3KpY_000030,"female speech, woman speaking",False,AV
+b93GiuJ3KpY_000030,people belly laughing,False,-
+b93GiuJ3KpY_000030,people burping,True,A
+b93GiuJ3KpY_000030,people eating,False,V
+b93GiuJ3KpY_000030,people giggling,False,-
+bD5MT2FoOJg_000030,hair dryer drying,True,AV
+bFfr9DS2qgA_000340,"male speech, man speaking",False,AV
+bFfr9DS2qgA_000340,playing harmonica,True,AV
+bG7GnOHpnj8_000030,basketball bounce,True,AV
+bG7GnOHpnj8_000030,"male speech, man speaking",False,A
+bG7GnOHpnj8_000030,people cheering,False,-
+bG7GnOHpnj8_000030,people clapping,False,A
+bG7GnOHpnj8_000030,people crowd,False,-
+bG7GnOHpnj8_000030,playing drum kit,False,-
+bOCkO_RtPIo_000300,"female speech, woman speaking",False,-
+bOCkO_RtPIo_000300,"male speech, man speaking",False,-
+bOCkO_RtPIo_000300,ocean burbling,False,AV
+bOCkO_RtPIo_000300,sailing,True,AV
+bOCkO_RtPIo_000300,sea waves,False,AV
+bOCkO_RtPIo_000300,wind noise,False,A
+bPzCbrmKoVY_000019,air conditioning noise,False,A
+bPzCbrmKoVY_000019,bathroom ventilation fan running,True,AV
+bPzCbrmKoVY_000019,"female speech, woman speaking",False,A
+bPzCbrmKoVY_000019,wind noise,False,-
+bcZ3ZPQQbYA_000011,"bird chirping, tweeting",False,AV
+bcZ3ZPQQbYA_000011,mynah bird singing,True,A
+bkCqeOhqCFU_000000,"bird chirping, tweeting",False,-
+bkCqeOhqCFU_000000,bird squawking,False,-
+bkCqeOhqCFU_000000,pheasant crowing,True,AV
+bpXRRH_CxJM_000140,footsteps on snow,True,-
+bpXRRH_CxJM_000140,wind noise,False,A
+bpXRRH_CxJM_000140,wind rustling leaves,False,AV
+bydVpoBELn8_000235,mouse clicking,True,A
+bydVpoBELn8_000235,people slurping,False,-
+bydVpoBELn8_000235,playing acoustic guitar,False,-
+bydVpoBELn8_000235,playing bass guitar,False,-
+bydVpoBELn8_000235,playing drum kit,False,-
+bydVpoBELn8_000235,playing electric guitar,False,A
+bydVpoBELn8_000235,typing on computer keyboard,False,A
+c40hgtfiYm0_000010,typing on typewriter,True,AV
+caYu_xoFeF4_000040,female singing,False,AV
+caYu_xoFeF4_000040,"female speech, woman speaking",False,-
+caYu_xoFeF4_000040,playing harmonica,False,-
+caYu_xoFeF4_000040,playing tabla,True,A
+cgLHn7xt_GY_000130,"bird chirping, tweeting",False,-
+cgLHn7xt_GY_000130,bird squawking,False,-
+cgLHn7xt_GY_000130,bird wings flapping,True,AV
+cgLHn7xt_GY_000130,"male speech, man speaking",False,A
+cgLHn7xt_GY_000130,people whistling,False,A
+cp8t27oT_ww_000000,playing acoustic guitar,False,-
+cp8t27oT_ww_000000,playing bass drum,False,-
+cp8t27oT_ww_000000,playing drum kit,False,A
+cp8t27oT_ww_000000,playing electric guitar,False,-
+cp8t27oT_ww_000000,playing ukulele,True,-
+cp8t27oT_ww_000000,sea waves,False,-
+cp8t27oT_ww_000000,splashing water,False,-
+cur9zG87bAQ_000004,baby babbling,False,AV
+cur9zG87bAQ_000004,baby laughter,True,AV
+cur9zG87bAQ_000004,people belly laughing,False,-
+cur9zG87bAQ_000004,people giggling,False,A
+cwzG9KvA--Y_000006,air conditioning noise,True,AV
+cwzG9KvA--Y_000006,"male speech, man speaking",False,A
+cwzG9KvA--Y_000006,wind noise,False,-
+d3gUXsTbmQQ_000038,"bird chirping, tweeting",False,A
+d3gUXsTbmQQ_000038,wind noise,False,A
+d3gUXsTbmQQ_000038,zebra braying,True,AV
+dFKYXLU3hWg_000098,car passing by,False,-
+dFKYXLU3hWg_000098,police car (siren),True,AV
+dLRlnhW9_Pc_000070,machine gun shooting,True,AV
+dNNoEFMJ_94_000000,firing muskets,True,AV
+dNNoEFMJ_94_000000,machine gun shooting,False,-
+dNNoEFMJ_94_000000,"male speech, man speaking",False,A
+dNNoEFMJ_94_000000,people screaming,False,A
+dPcgzRPF_yA_000484,"male speech, man speaking",False,A
+dPcgzRPF_yA_000484,planing timber,True,AV
+dQpqPwiKva0_000054,female singing,False,AV
+dQpqPwiKva0_000054,male singing,False,AV
+dQpqPwiKva0_000054,"male speech, man speaking",False,-
+dQpqPwiKva0_000054,yodelling,True,AV
+dV9YwT62U_g_000030,people shuffling,True,AV
+davLHMXIHDM_000320,car engine idling,False,-
+davLHMXIHDM_000320,car passing by,False,AV
+davLHMXIHDM_000320,"engine accelerating, revving, vroom",False,A
+davLHMXIHDM_000320,reversing beeps,True,AV
+de8skUrbdUc_000030,cricket chirping,True,AV
+de8skUrbdUc_000030,"female speech, woman speaking",False,A
+de8skUrbdUc_000030,"male speech, man speaking",False,A
+df4PKpleovw_000013,"male speech, man speaking",False,A
+df4PKpleovw_000013,playing badminton,True,AV
+dfXl7_lnt0U_000109,bouncing on trampoline,True,AV
+dfXl7_lnt0U_000109,"child speech, kid speaking",False,-
+dfXl7_lnt0U_000109,male singing,False,A
+dfXl7_lnt0U_000109,"male speech, man speaking",False,A
+dfXl7_lnt0U_000109,playing drum kit,False,A
+dfXl7_lnt0U_000109,playing electric guitar,False,A
+dfXl7_lnt0U_000109,playing synthesizer,False,-
+dp5VlGurxM4_000091,alarm clock ringing,True,A
+dp5VlGurxM4_000091,"female speech, woman speaking",False,A
+e53eD7dpQi0_000030,mouse squeaking,True,-
+e53eD7dpQi0_000030,people screaming,False,A
+e53eD7dpQi0_000030,roller coaster running,False,AV
+e53eD7dpQi0_000030,wind noise,False,-
+eFzyxoc1w1g_000010,"bird chirping, tweeting",False,-
+eFzyxoc1w1g_000010,bird squawking,True,A
+eFzyxoc1w1g_000010,"male speech, man speaking",False,A
+emAtRpVf2_A_000270,vacuum cleaner cleaning floors,True,AV
+ez50pKMB62U_000422,"female speech, woman speaking",False,AV
+ez50pKMB62U_000422,lip smacking,True,AV
+ez50pKMB62U_000422,people whispering,False,AV
+f1t07gkcfR8_000110,people cheering,False,-
+f1t07gkcfR8_000110,playing drum kit,False,A
+f1t07gkcfR8_000110,playing electric guitar,False,A
+f1t07gkcfR8_000110,toilet flushing,True,A
+f77SKdyn-1Y_001228,ocean burbling,False,-
+f77SKdyn-1Y_001228,sea waves,True,AV
+f77SKdyn-1Y_001228,sloshing water,False,-
+f77SKdyn-1Y_001228,spraying water,False,-
+fESL2PLuIwA_000140,"male speech, man speaking",False,-
+fESL2PLuIwA_000140,"motorboat, speedboat acceleration",False,AV
+fESL2PLuIwA_000140,ocean burbling,True,AV
+fESL2PLuIwA_000140,sea waves,False,AV
+fESL2PLuIwA_000140,splashing water,False,-
+fESL2PLuIwA_000140,spraying water,False,-
+fESL2PLuIwA_000140,wind noise,False,-
+fIer0uCLqSM_000030,baby babbling,False,V
+fIer0uCLqSM_000030,people coughing,True,-
+fIer0uCLqSM_000030,people nose blowing,False,-
+fIer0uCLqSM_000030,people sneezing,False,-
+fK39zLd_OrM_000706,"railroad car, train wagon",False,AV
+fK39zLd_OrM_000706,train horning,True,AV
+fLPEAElOWho_000148,playing bass drum,True,AV
+fLPEAElOWho_000148,playing cymbal,False,AV
+fLPEAElOWho_000148,playing drum kit,False,AV
+fLPEAElOWho_000148,playing snare drum,False,AV
+fLPEAElOWho_000148,playing timbales,False,-
+fLPEAElOWho_000148,playing timpani,False,-
+fnj0Bhpamqo_000115,car engine idling,False,AV
+fnj0Bhpamqo_000115,plastic bottle crushing,False,A
+fnj0Bhpamqo_000115,playing synthesizer,False,-
+fnj0Bhpamqo_000115,splashing water,False,-
+fnj0Bhpamqo_000115,spraying water,False,-
+fnj0Bhpamqo_000115,squishing water,True,-
+ftxxMmqrYQ8_000003,snake rattling,True,AV
+ftxxMmqrYQ8_000003,wind noise,False,A
+fumA4irXnyQ_000030,dog barking,False,A
+fumA4irXnyQ_000030,fire crackling,True,-
+gLPkzyEy--c_000876,people eating,False,-
+gLPkzyEy--c_000876,people eating apple,True,AV
+gVDOQ2ke0bQ_000174,airplane,False,-
+gVDOQ2ke0bQ_000174,airplane flyby,False,-
+gVDOQ2ke0bQ_000174,barn swallow calling,True,AV
+gVDOQ2ke0bQ_000174,"bird chirping, tweeting",False,AV
+gVDOQ2ke0bQ_000174,"engine accelerating, revving, vroom",False,-
+gd77_8KaHc8_000000,pig oinking,True,A
+gflvYpShFzo_000001,playing tuning fork,True,AV
+h5gvpYSIifs_000080,"female speech, woman speaking",False,AV
+h5gvpYSIifs_000080,"male speech, man speaking",False,AV
+h5gvpYSIifs_000080,playing glockenspiel,False,-
+h5gvpYSIifs_000080,"playing marimba, xylophone",True,A
+hK3V1i7MSHY_000020,baby babbling,True,-
+hK3V1i7MSHY_000020,female singing,False,-
+hK3V1i7MSHY_000020,male singing,False,A
+hK3V1i7MSHY_000020,people crowd,False,AV
+hK3V1i7MSHY_000020,playing bass guitar,False,-
+hK3V1i7MSHY_000020,playing double bass,False,-
+hK3V1i7MSHY_000020,playing trumpet,False,-
+hsch-EsQFlU_000021,"bird chirping, tweeting",False,-
+hsch-EsQFlU_000021,eagle screaming,True,AV
+hyNm8rXY2-g_000003,"alligators, crocodiles hissing",True,V
+hyNm8rXY2-g_000003,cricket chirping,False,-
+hyNm8rXY2-g_000003,"female speech, woman speaking",False,-
+hyNm8rXY2-g_000003,"male speech, man speaking",False,A
+hyNm8rXY2-g_000003,wind noise,False,-
+i39ZIS_58UY_000000,ambulance siren,False,-
+i39ZIS_58UY_000000,car passing by,False,V
+i39ZIS_58UY_000000,lighting firecrackers,True,-
+i39ZIS_58UY_000000,machine gun shooting,False,-
+i39ZIS_58UY_000000,police car (siren),False,-
+iCaMiydCvFI_000061,"bird chirping, tweeting",False,-
+iCaMiydCvFI_000061,bird squawking,False,-
+iCaMiydCvFI_000061,penguins braying,True,AV
+iJ6DxdwyDeE_000064,"bird chirping, tweeting",False,AV
+iJ6DxdwyDeE_000064,chicken clucking,True,AV
+iMNEd2l5Ff8_000030,female singing,False,-
+iMNEd2l5Ff8_000030,firing cannon,True,AV
+iMNEd2l5Ff8_000030,male singing,False,A
+iMNEd2l5Ff8_000030,"male speech, man speaking",False,-
+iMNEd2l5Ff8_000030,playing drum kit,False,A
+iMNEd2l5Ff8_000030,playing piano,False,-
+iMNEd2l5Ff8_000030,playing synthesizer,False,A
+iMNEd2l5Ff8_000030,rapping,False,A
+ibCQVMd2SBM_000030,female singing,False,-
+ibCQVMd2SBM_000030,mouse clicking,False,V
+ibCQVMd2SBM_000030,mouse squeaking,True,-
+ibCQVMd2SBM_000030,playing drum kit,False,A
+ibCQVMd2SBM_000030,playing electric guitar,False,A
+ibCQVMd2SBM_000030,playing synthesizer,False,-
+ibCQVMd2SBM_000030,typing on computer keyboard,False,-
+iiAK295_-jk_000021,baby crying,True,A
+iiAK295_-jk_000021,car passing by,False,-
+iiAK295_-jk_000021,"female speech, woman speaking",False,A
+iiAK295_-jk_000021,playing double bass,False,-
+iiAK295_-jk_000021,playing drum kit,False,-
+iiAK295_-jk_000021,playing synthesizer,False,-
+imo0-muPdy0_000030,cat growling,False,-
+imo0-muPdy0_000030,cat hissing,False,-
+imo0-muPdy0_000030,cat meowing,False,-
+imo0-muPdy0_000030,cat purring,True,AV
+jDSo2g-tW98_000019,chipmunk chirping,True,AV
+jEP-WEblweY_000115,"railroad car, train wagon",False,-
+jEP-WEblweY_000115,train horning,True,AV
+jR-H47v1arg_000080,"bird chirping, tweeting",False,AV
+jR-H47v1arg_000080,"pigeon, dove cooing",True,AV
+jr1v6zC2ejk_000330,cupboard opening or closing,True,V
+jr1v6zC2ejk_000330,door slamming,False,-
+jr1v6zC2ejk_000330,opening or closing drawers,False,V
+k0t8COy1a9c_000092,people eating noodle,True,-
+k0t8COy1a9c_000092,"playing marimba, xylophone",False,-
+k0t8COy1a9c_000092,playing piano,False,A
+kaz5auB2okE_000126,"female speech, woman speaking",False,A
+kaz5auB2okE_000126,people gargling,True,-
+kaz5auB2okE_000126,playing synthesizer,False,-
+kh77cZfsDvc_000089,bull bellowing,True,AV
+kh77cZfsDvc_000089,cattle mooing,False,-
+kh77cZfsDvc_000089,dog barking,False,-
+kh77cZfsDvc_000089,wind noise,False,-
+kh77cZfsDvc_000089,wind rustling leaves,False,-
+kqnxnbVbO5Q_000023,"child speech, kid speaking",False,-
+kqnxnbVbO5Q_000023,"female speech, woman speaking",False,A
+kqnxnbVbO5Q_000023,"male speech, man speaking",False,-
+kqnxnbVbO5Q_000023,people whistling,False,-
+kqnxnbVbO5Q_000023,playing lacrosse,True,AV
+lFM2QsQb6nA_000010,door slamming,False,AV
+lFM2QsQb6nA_000010,"male speech, man speaking",False,A
+lFM2QsQb6nA_000010,playing cymbal,True,A
+lFM2QsQb6nA_000010,playing drum kit,False,-
+lFM2QsQb6nA_000010,playing snare drum,False,-
+lKTKLkLPwmI_000009,playing piano,False,-
+lKTKLkLPwmI_000009,singing bowl,False,-
+lKTKLkLPwmI_000009,sloshing water,False,-
+lKTKLkLPwmI_000009,splashing water,False,-
+lKTKLkLPwmI_000009,spraying water,False,-
+lKTKLkLPwmI_000009,underwater bubbling,True,AV
+lf_8Pp5QDng_000001,car engine idling,False,-
+lf_8Pp5QDng_000001,"engine accelerating, revving, vroom",False,AV
+lf_8Pp5QDng_000001,fire crackling,False,-
+lf_8Pp5QDng_000001,"race car, auto racing",True,AV
+lu1IALDsQVk_000474,bowling impact,True,AV
+lu1IALDsQVk_000474,"male speech, man speaking",False,AV
+lu1IALDsQVk_000474,playing drum kit,False,A
+lu1IALDsQVk_000474,playing electric guitar,False,-
+lu1IALDsQVk_000474,playing synthesizer,False,-
+mE0qnyrn7qI_000585,air conditioning noise,False,-
+mE0qnyrn7qI_000585,forging swords,True,AV
+miT69L7G9iA_000140,child singing,False,AV
+miT69L7G9iA_000140,"child speech, kid speaking",False,AV
+miT69L7G9iA_000140,children shouting,False,-
+miT69L7G9iA_000140,people babbling,True,AV
+miT69L7G9iA_000140,people clapping,False,-
+miT69L7G9iA_000140,playing drum kit,False,-
+miT69L7G9iA_000140,playing electric guitar,False,A
+miT69L7G9iA_000140,playing synthesizer,False,-
+mjhlzNVpnXs_000026,air horn,True,-
+mjhlzNVpnXs_000026,car passing by,False,AV
+mjhlzNVpnXs_000026,foghorn,False,-
+mjhlzNVpnXs_000026,"vehicle horn, car horn, honking",False,AV
+mnH8IKZXmMs_000257,"male speech, man speaking",False,A
+mnH8IKZXmMs_000257,people cheering,False,-
+mnH8IKZXmMs_000257,people clapping,False,-
+mnH8IKZXmMs_000257,playing drum kit,False,A
+mnH8IKZXmMs_000257,playing electric guitar,False,A
+mnH8IKZXmMs_000257,playing squash,True,AV
+muEJOWzBod8_000021,bowling impact,False,-
+muEJOWzBod8_000021,"male speech, man speaking",False,-
+muEJOWzBod8_000021,people giggling,False,-
+muEJOWzBod8_000021,people slapping,False,-
+muEJOWzBod8_000021,striking bowling,True,AV
+mxQ37FEFLKY_000030,"female speech, woman speaking",False,-
+mxQ37FEFLKY_000030,"male speech, man speaking",False,AV
+mxQ37FEFLKY_000030,people whispering,True,AV
+nTkRP49OtCs_000159,"female speech, woman speaking",False,AV
+nTkRP49OtCs_000159,people gargling,True,AV
+nTkRP49OtCs_000159,people giggling,False,AV
+nUdUlJtyPcg_000233,chopping food,True,AV
+nUdUlJtyPcg_000233,"male speech, man speaking",False,A
+nUdUlJtyPcg_000233,people crowd,False,A
+nUdUlJtyPcg_000233,people whistling,False,A
+nUs5SJyQPnM_000350,playing piano,False,AV
+nUs5SJyQPnM_000350,playing sitar,True,AV
+nUs5SJyQPnM_000350,playing tabla,False,AV
+nb_7c2xPKYA_000400,female singing,False,AV
+nb_7c2xPKYA_000400,"female speech, woman speaking",False,-
+nb_7c2xPKYA_000400,male singing,False,-
+nb_7c2xPKYA_000400,playing mandolin,True,AV
+nwdZrUBojGs_000100,"female speech, woman speaking",False,AV
+nwdZrUBojGs_000100,playing glockenspiel,False,-
+nwdZrUBojGs_000100,playing harp,False,-
+nwdZrUBojGs_000100,playing piano,False,-
+nwdZrUBojGs_000100,playing vibraphone,True,A
+oNyiXxPxENY_000196,ferret dooking,True,AV
+oT8Vg7egGwI_000043,people booing,True,AV
+oT8Vg7egGwI_000043,people cheering,False,AV
+oT8Vg7egGwI_000043,people clapping,False,AV
+oT8Vg7egGwI_000043,people crowd,False,-
+oT8Vg7egGwI_000043,people screaming,False,A
+oT8Vg7egGwI_000043,people whistling,False,A
+oqT3pTJFv5k_000030,baby babbling,False,AV
+oqT3pTJFv5k_000030,baby crying,False,-
+oqT3pTJFv5k_000030,baby laughter,False,-
+oqT3pTJFv5k_000030,"female speech, woman speaking",False,A
+oqT3pTJFv5k_000030,"male speech, man speaking",False,A
+oqT3pTJFv5k_000030,people finger snapping,True,AV
+oqT3pTJFv5k_000030,people giggling,False,-
+ortMPr9w06U_000021,"donkey, ass braying",True,AV
+ov_g-r7Vo8M_000030,playing bass drum,False,-
+ov_g-r7Vo8M_000030,playing cymbal,True,AV
+ov_g-r7Vo8M_000030,playing drum kit,False,AV
+ov_g-r7Vo8M_000030,playing snare drum,False,AV
+oyVYqVPSL-c_000224,electric grinder grinding,True,AV
+oyVYqVPSL-c_000224,wind noise,False,-
+pGnTEZvUcuo_000163,"railroad car, train wagon",False,AV
+pGnTEZvUcuo_000163,train whistling,True,-
+pI2gLesgVes_000009,"alligators, crocodiles hissing",True,AV
+pI2gLesgVes_000009,wind noise,False,A
+pTY56E9D_cE_000154,car passing by,False,-
+pTY56E9D_cE_000154,"engine accelerating, revving, vroom",False,AV
+pTY56E9D_cE_000154,plastic bottle crushing,False,-
+pTY56E9D_cE_000154,splashing water,False,-
+pTY56E9D_cE_000154,spraying water,False,-
+pTY56E9D_cE_000154,squishing water,True,-
+pawRXvTZnRo_000080,"male speech, man speaking",False,AV
+pawRXvTZnRo_000080,using sewing machines,True,AV
+pc-FTQNfxx0_000266,disc scratching,True,AV
+pc-FTQNfxx0_000266,"male speech, man speaking",False,A
+pcGbob7fSgE_000071,people marching,True,AV
+pcGbob7fSgE_000071,playing bass drum,False,A
+pcGbob7fSgE_000071,playing snare drum,False,AV
+pcGbob7fSgE_000071,playing trombone,False,-
+pcGbob7fSgE_000071,playing trumpet,False,AV
+pp4xXyiezA8_000020,baby crying,False,-
+pp4xXyiezA8_000020,"female speech, woman speaking",False,AV
+pp4xXyiezA8_000020,"male speech, man speaking",False,AV
+pp4xXyiezA8_000020,people sobbing,True,AV
+q1SftfE_LF4_000028,playing acoustic guitar,False,AV
+q1SftfE_LF4_000028,playing castanets,True,AV
+q5h5ldceqqs_000053,air horn,False,-
+q5h5ldceqqs_000053,foghorn,False,-
+q5h5ldceqqs_000053,hail,True,AV
+q5h5ldceqqs_000053,raining,False,-
+q5h5ldceqqs_000053,thunder,False,-
+q5h5ldceqqs_000053,"vehicle horn, car horn, honking",False,A
+q5h5ldceqqs_000053,wind noise,False,A
+q5h5ldceqqs_000053,wind rustling leaves,False,A
+qHDSQ2RC-sQ_000030,dog barking,False,-
+qHDSQ2RC-sQ_000030,singing bowl,True,AV
+qHdv60Yqxms_000010,sloshing water,False,-
+qHdv60Yqxms_000010,underwater bubbling,False,A
+qHdv60Yqxms_000010,whale calling,True,A
+qJ2cY646opA_000000,"female speech, woman speaking",False,AV
+qJ2cY646opA_000000,people screaming,False,AV
+qJ2cY646opA_000000,people slapping,True,AV
+qUewZTflBeM_000040,car passing by,False,AV
+qUewZTflBeM_000040,"vehicle horn, car horn, honking",True,AV
+qeTDQnAZ81w_000067,sloshing water,False,-
+qeTDQnAZ81w_000067,swimming,False,V
+qeTDQnAZ81w_000067,underwater bubbling,True,AV
+qkvIEmIRP4g_000030,car engine idling,False,-
+qkvIEmIRP4g_000030,car passing by,False,-
+qkvIEmIRP4g_000030,fire truck siren,True,AV
+rJftCcAQZEY_000460,"bird chirping, tweeting",False,A
+rJftCcAQZEY_000460,"child speech, kid speaking",False,AV
+rJftCcAQZEY_000460,cricket chirping,True,A
+rJftCcAQZEY_000460,"male speech, man speaking",False,AV
+rf8nGoe0u2M_000043,"child speech, kid speaking",False,-
+rf8nGoe0u2M_000043,"female speech, woman speaking",False,-
+rf8nGoe0u2M_000043,footsteps on snow,True,AV
+rf8nGoe0u2M_000043,"male speech, man speaking",False,-
+rmPfJgDBeQ8_000020,"bird chirping, tweeting",False,A
+rmPfJgDBeQ8_000020,splashing water,False,-
+rmPfJgDBeQ8_000020,stream burbling,True,AV
+rmPfJgDBeQ8_000020,wind noise,False,-
+rsOO65qFPv8_000380,eating with cutlery,False,-
+rsOO65qFPv8_000380,lip smacking,False,-
+rsOO65qFPv8_000380,"male speech, man speaking",False,AV
+rsOO65qFPv8_000380,people eating,False,-
+rsOO65qFPv8_000380,people eating noodle,True,AV
+sKnCwuTOzwE_000032,hail,True,AV
+sKnCwuTOzwE_000032,thunder,False,-
+sKnCwuTOzwE_000032,wind noise,False,AV
+sKnCwuTOzwE_000032,wind rustling leaves,False,AV
+sm7eBFHtdeA_000030,playing drum kit,False,-
+sm7eBFHtdeA_000030,playing electronic organ,False,-
+sm7eBFHtdeA_000030,playing hammond organ,False,AV
+sm7eBFHtdeA_000030,playing piano,False,-
+sm7eBFHtdeA_000030,playing synthesizer,False,AV
+sm7eBFHtdeA_000030,wind rustling leaves,True,-
+t7oAteGa55g_000090,beat boxing,False,-
+t7oAteGa55g_000090,playing bass drum,False,-
+t7oAteGa55g_000090,playing drum kit,False,A
+t7oAteGa55g_000090,"vehicle horn, car horn, honking",True,A
+tGUWSgewh0A_000270,playing bass drum,True,-
+tGUWSgewh0A_000270,playing drum kit,False,-
+tGUWSgewh0A_000270,playing timbales,False,A
+tGUWSgewh0A_000270,playing timpani,False,A
+tGUWSgewh0A_000270,playing trombone,False,-
+tGUWSgewh0A_000270,playing trumpet,False,A
+tOTQJaRkmaY_000381,playing congas,True,AV
+tVK9-hEfbnY_000021,chinchilla barking,True,AV
+t_36kmJA8f4_000020,"bird chirping, tweeting",False,-
+t_36kmJA8f4_000020,"male speech, man speaking",False,A
+t_36kmJA8f4_000020,sharpen knife,True,AV
+tj77zzeFPsc_000267,eating with cutlery,False,V
+tj77zzeFPsc_000267,people eating,False,AV
+tj77zzeFPsc_000267,people eating noodle,True,V
+tj77zzeFPsc_000267,people slurping,False,-
+uAl_7AUPI2Q_000036,male singing,False,A
+uAl_7AUPI2Q_000036,"male speech, man speaking",False,-
+uAl_7AUPI2Q_000036,playing shofar,True,AV
+uC505J2Zf3o_000044,cell phone buzzing,True,-
+uC505J2Zf3o_000044,"male speech, man speaking",False,A
+uH926Sn1pYE_000044,cutting hair with electric trimmers,True,V
+uH926Sn1pYE_000044,female singing,False,-
+uH926Sn1pYE_000044,playing drum kit,False,-
+uH926Sn1pYE_000044,playing synthesizer,False,A
+vkxPLFRLAy0_000000,"bird chirping, tweeting",False,A
+vkxPLFRLAy0_000000,fox barking,True,AV
+vkxPLFRLAy0_000000,wind noise,False,-
+vzY4mHyr-F8_000214,beat boxing,False,-
+vzY4mHyr-F8_000214,child singing,False,-
+vzY4mHyr-F8_000214,female singing,False,-
+vzY4mHyr-F8_000214,male singing,False,AV
+vzY4mHyr-F8_000214,people humming,True,-
+vzY4mHyr-F8_000214,singing choir,False,-
+w2bAs3lug3c_000030,"female speech, woman speaking",False,AV
+w2bAs3lug3c_000030,goat bleating,True,AV
+w2bAs3lug3c_000030,people giggling,False,-
+w2bAs3lug3c_000030,people screaming,False,AV
+wTOSS0cx50s_000170,"male speech, man speaking",False,AV
+wTOSS0cx50s_000170,people cheering,False,-
+wTOSS0cx50s_000170,people running,True,AV
+wTOSS0cx50s_000170,people screaming,False,-
+wTOSS0cx50s_000170,playing drum kit,False,-
+wTOSS0cx50s_000170,playing electric guitar,False,-
+wq2BsXHkz4E_000378,playing bongo,False,-
+wq2BsXHkz4E_000378,playing djembe,True,AV
+wq2BsXHkz4E_000378,playing snare drum,False,-
+x23S0-ti2Pw_000234,"child speech, kid speaking",False,AV
+x23S0-ti2Pw_000234,female singing,False,-
+x23S0-ti2Pw_000234,"female speech, woman speaking",False,AV
+x23S0-ti2Pw_000234,playing tambourine,True,AV
+x2ztI3YNu9o_000030,playing accordion,True,AV
+x2ztI3YNu9o_000030,wind rustling leaves,False,-
+xRAj37jqdT0_000082,car passing by,False,-
+xRAj37jqdT0_000082,hammering nails,True,AV
+x_5t0os3A2I_000025,"male speech, man speaking",False,AV
+x_5t0os3A2I_000025,playing bongo,True,AV
+xanOeYcQpcM_000020,"engine accelerating, revving, vroom",False,-
+xanOeYcQpcM_000020,lawn mowing,True,AV
+xcATi4rdSu8_000002,"bird chirping, tweeting",False,AV
+xcATi4rdSu8_000002,wind noise,False,A
+xcATi4rdSu8_000002,wood thrush calling,True,AV
+xnMI64kXQA8_000252,cricket chirping,True,AV
+xnMI64kXQA8_000252,wind noise,False,-
+xnMI64kXQA8_000252,wind rustling leaves,False,V
+y3NZZETzVws_000010,"bird chirping, tweeting",False,AV
+y3NZZETzVws_000010,chicken clucking,True,AV
+y3NZZETzVws_000010,wind noise,False,-
+y3b46Xk89rM_000114,"bird chirping, tweeting",False,AV
+y3b46Xk89rM_000114,canary calling,False,-
+y3b46Xk89rM_000114,eagle screaming,True,-
+y3b46Xk89rM_000114,"electric shaver, electric razor shaving",False,-
+y3b46Xk89rM_000114,parrot talking,False,-
+yInXc5FJNyc_000129,"railroad car, train wagon",False,AV
+yInXc5FJNyc_000129,train horning,False,-
+yInXc5FJNyc_000129,train wheels squealing,True,AV
+ySNRJCMMTu4_000040,"male speech, man speaking",False,A
+ySNRJCMMTu4_000040,people cheering,False,-
+ySNRJCMMTu4_000040,people clapping,False,-
+ySNRJCMMTu4_000040,people crowd,False,AV
+ySNRJCMMTu4_000040,people whistling,False,A
+ySNRJCMMTu4_000040,playing volleyball,True,V
+yUi5HXpdh7s_000103,"male speech, man speaking",False,A
+yUi5HXpdh7s_000103,people cheering,False,AV
+yUi5HXpdh7s_000103,people crowd,False,AV
+yUi5HXpdh7s_000103,people slapping,True,AV
+yV_rZSH8tBk_000570,"male speech, man speaking",False,AV
+yV_rZSH8tBk_000570,people hiccup,True,AV
+yXKFzL5lFKE_000041,lathe spinning,True,AV
+yXeKrbtMz2M_000010,"child speech, kid speaking",False,-
+yXeKrbtMz2M_000010,"male speech, man speaking",True,AV
+yXeKrbtMz2M_000010,playing drum kit,False,A
+yXeKrbtMz2M_000010,playing electric guitar,False,A
+yXeKrbtMz2M_000010,wind noise,False,-
+yXeKrbtMz2M_000010,wind rustling leaves,False,-
+ymsvz9dPbog_000116,male singing,False,AV
+ymsvz9dPbog_000116,playing acoustic guitar,False,AV
+ymsvz9dPbog_000116,playing bass drum,False,-
+ymsvz9dPbog_000116,playing cello,False,-
+ymsvz9dPbog_000116,playing double bass,False,-
+ymsvz9dPbog_000116,playing drum kit,False,AV
+ymsvz9dPbog_000116,playing flute,False,A
+ymsvz9dPbog_000116,playing snare drum,False,-
+ymsvz9dPbog_000116,playing washboard,True,AV
+yosIoc4WCsM_000008,"donkey, ass braying",True,AV
+yosIoc4WCsM_000008,wind noise,False,A
+z3h01MBxikE_000000,missile launch,True,AV
+z4HX8-du2nQ_000070,helicopter,True,AV
+z4HX8-du2nQ_000070,wind noise,False,-
+zF4yWUxbEME_000008,car engine idling,False,AV
+zF4yWUxbEME_000008,"engine accelerating, revving, vroom",False,A
+zF4yWUxbEME_000008,skidding,True,-
+zZ4zhYtg_dM_000120,golf driving,True,AV
+zexkXRiD9zk_000050,ocean burbling,False,V
+zexkXRiD9zk_000050,sailing,True,AV
+zexkXRiD9zk_000050,sea waves,False,AV
+zexkXRiD9zk_000050,wind noise,False,-
+zi5NCXyuLMI_000230,"female speech, woman speaking",False,-
+zi5NCXyuLMI_000230,gibbon howling,True,AV
+zj5JwVSZJJ4_000222,hail,True,AV
+zj5JwVSZJJ4_000222,"male speech, man speaking",False,A
+zj5JwVSZJJ4_000222,thunder,False,-
+zj5JwVSZJJ4_000222,wind noise,False,AV
+zj5JwVSZJJ4_000222,wind rustling leaves,False,AV
+zsZr_xJ7ECQ_000029,baby babbling,False,AV
+zsZr_xJ7ECQ_000029,baby laughter,True,AV
+zsZr_xJ7ECQ_000029,"bird chirping, tweeting",False,-
+zsZr_xJ7ECQ_000029,"male speech, man speaking",False,AV
+zsZr_xJ7ECQ_000029,people belly laughing,False,-
