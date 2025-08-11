@@ -58,6 +58,10 @@ class VGGSounder:
         self,
         csv_path: Optional[Union[str, Path]] = None,
         modality: Optional[str] = None,
+        *,
+        background_music: Optional[bool] = None,
+        voice_over: Optional[bool] = None,
+        static_image: Optional[bool] = None,
     ):
         """
         Initialize the Labels object.
@@ -72,9 +76,20 @@ class VGGSounder:
                      - "A ONLY": audio only (only "A" labels, excludes "AV")
                      - "V ONLY": visual only (only "V" labels, excludes "AV")
                      - None: all modalities are included.
+            background_music: If set to True/False, include only videos whose
+                `background_music` meta matches. If None, do not filter on this meta.
+            voice_over: If set to True/False, include only videos whose
+                `voice_over` meta matches. If None, do not filter on this meta.
+            static_image: If set to True/False, include only videos whose
+                `static_image` meta matches. If None, do not filter on this meta.
         """
         self.csv_path = self._resolve_csv_path(csv_path)
         self._current_modality: Optional[str] = modality
+        self._current_meta_filters: Dict[str, Optional[bool]] = {
+            "background_music": background_music,
+            "voice_over": voice_over,
+            "static_image": static_image,
+        }
 
         self.__original_data: Dict[str, VideoData] = {}
         self._data: Dict[str, VideoData] = {}
@@ -176,7 +191,7 @@ class VGGSounder:
 
         if not classes_csv_path.exists():
             raise FileNotFoundError(f"classes.csv not found at {classes_csv_path}")
- 
+
         # Read classes.csv and extract display_name column in order
         with open(classes_csv_path, "r", encoding="utf-8") as file:
             reader = csv.DictReader(file)
@@ -187,23 +202,27 @@ class VGGSounder:
                 self._labels.append(display_name)
 
     def _recompute_data(self):
-        """Recompute _data based on current modality filter."""
+        """Recompute _data based on current modality and meta filters."""
         self._data.clear()
         self._video_id_to_index.clear()
         self._index_to_video_id.clear()
 
         index = 0
         for video_id, video_data in self.__original_data.items():
+            # First: check meta filters; skip video if it doesn't match
+            if not self._meta_matches(video_data.meta_labels):
+                continue
+
             if self._current_modality is None:
-                # No filtering, include all videos
+                # No modality filtering, include full video data
                 self._data[video_id] = video_data
                 self._video_id_to_index[video_id] = index
                 self._index_to_video_id[index] = video_id
                 index += 1
             else:
                 # Filter based on modality
-                filtered_labels = []
-                filtered_modalities = []
+                filtered_labels: List[str] = []
+                filtered_modalities: List[str] = []
 
                 for label, modality in zip(video_data.labels, video_data.modalities):
                     modality_upper = modality.upper()
@@ -235,6 +254,15 @@ class VGGSounder:
                     self._index_to_video_id[index] = video_id
                     index += 1
 
+    def _meta_matches(self, meta_labels: Dict[str, bool]) -> bool:
+        """Return True if the given meta labels match the active meta filters."""
+        for key, desired_value in self._current_meta_filters.items():
+            if desired_value is None:
+                continue
+            if meta_labels.get(key) is not desired_value:
+                return False
+        return True
+
     def set_modality(self, modality: Optional[str] = None):
         """
         Set the modality filter for the dataset.
@@ -262,6 +290,43 @@ class VGGSounder:
     def get_modality(self) -> Optional[str]:
         """Get the current modality filter."""
         return self._current_modality
+
+    def set_meta_filters(
+        self,
+        *,
+        background_music: Optional[bool] = None,
+        voice_over: Optional[bool] = None,
+        static_image: Optional[bool] = None,
+    ) -> None:
+        """
+        Set metadata filters for the dataset.
+
+        Passing None disables filtering for that specific metadata key.
+
+        Args:
+            background_music: If True/False, only include videos with matching value.
+            voice_over: If True/False, only include videos with matching value.
+            static_image: If True/False, only include videos with matching value.
+        """
+        self._current_meta_filters = {
+            "background_music": background_music,
+            "voice_over": voice_over,
+            "static_image": static_image,
+        }
+        self._recompute_data()
+
+    def clear_meta_filters(self) -> None:
+        """Remove all active metadata filters."""
+        self._current_meta_filters = {
+            "background_music": None,
+            "voice_over": None,
+            "static_image": None,
+        }
+        self._recompute_data()
+
+    def get_meta_filters(self) -> Dict[str, Optional[bool]]:
+        """Get the current metadata filters as a dict."""
+        return dict(self._current_meta_filters)
 
     def __getitem__(self, key: Union[str, int]) -> VideoData:
         """Get video data by video ID or index."""

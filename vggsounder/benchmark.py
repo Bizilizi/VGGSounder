@@ -98,6 +98,7 @@ METRICS = [
 def get_gt_for_modality(
     vggsounder: VGGSounder,
     modality: Literal["av", "a", "v", "a only", "v only"],
+    subset_ids: list[str] | None = None,
 ):
     """Extract ground truth labels for a specific modality subset.
 
@@ -109,7 +110,8 @@ def get_gt_for_modality(
             - 'v': All samples with visual component (V + AV)
             - 'a only': Audio-only samples (A)
             - 'v only': Visual-only samples (V)
-
+        subset_ids (list[str] | None): List of video IDs to include in the subset.
+            If None, all videos are included.
     Returns:
         pd.DataFrame: Processed dataframe with columns ['id', 'labels']
             where 'labels' contains list of labels per sample ID
@@ -121,6 +123,9 @@ def get_gt_for_modality(
 
     df_rows = []
     for video_data in vggsounder:
+        if subset_ids is not None and video_data.video_id not in subset_ids:
+            continue
+
         df_rows.append(
             {
                 "id": video_data.video_id,
@@ -563,18 +568,10 @@ def compute_all_results(
     """
     # Load and prepare ground truth data
     vggsounder = VGGSounder(dataset_path)
-    vggsounder_df = pd.read_csv(
-        vggsounder.csv_path
-    )  # covers the case where dataset_path is None
-
-    if subset_ids is not None:
-        vggsounder_df = vggsounder_df[vggsounder_df["video_id"].isin(subset_ids)]
-    vggsounder_df.rename(columns={"video_id": "id"}, inplace=True)
-
     # Load class names and prepare ground truth for each modality
     classes = vggsounder.get_all_labels()
     gts = {
-        modality: get_gt_for_modality(vggsounder, modality) for modality in modalities
+        modality: get_gt_for_modality(vggsounder, modality, subset_ids) for modality in modalities
     }
 
     all_results = defaultdict(dict)
@@ -764,6 +761,8 @@ def benchmark(
     models_path: str,
     display_names: dict[str, str],
     metrics: list[tuple[str, list[str]]],
+    subset_ids: list[str] | None = None,
+    dataset_path: str | None = None,
     verbose: bool = True,
 ):
     """
@@ -814,7 +813,12 @@ def benchmark(
             This input tells the function to extract the "accuracy" metric for modalities "a", "v", and "av";
             the "f1" metric for all five modalities; the "hit_rate" for "a", "v", and "av"; and the "mu"
             (modality confusion) metric for "a", "v", and "av".
-
+        subset_ids (list[str] | None):
+            If provided, only compute results for the subset of videos with the given IDs.
+            Default is None, which means all videos are used.
+        dataset_path (str | None):
+            Path to the VGGSounder dataset.
+            Default is None, which means the default dataset is used.
         verbose (bool, optional):
             If True, prints progress bars and status messages during computation.
             Default is True.
@@ -851,6 +855,8 @@ def benchmark(
     results = compute_all_results(
         models_path=models_path,
         models_filter=set(display_names.keys()) if display_names is not None else None,
+        subset_ids=subset_ids,
+        dataset_path=dataset_path,
         verbose=verbose,
     )
 
