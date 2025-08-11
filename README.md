@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://vggsounder.github.io/static/workshop_paper.pdf">
+<h1 align="center"><a href="https://vggsounder.github.io/static/vggsounder.pdf">
 VGGSounder: Audio-Visual Evaluations for Foundation Models</a></h1>
 <h5 align="center"> If our project helps you, please give us a star ⭐ on GitHub to support us. 🙏🙏</h2>
 
@@ -91,7 +91,7 @@ static_speech_videos = labels.get_videos_with_meta(
 
 ## 🏷️ Label Format
 
-VGGSounder annotations are stored in a CSV file located at `data/vggsounder.csv`. Each row corresponds to a single label for a specific video sample. The dataset supports **multi-label**, **multi-modal** classification with additional **meta-information** for robust evaluation.
+VGGSounder annotations are stored in a CSV file located at `vggsounder/data/vggsounder.csv` and `vggsounder/data/vggsounder+background-music.csv`. Each row corresponds to a single label for a specific video sample. The dataset supports **multi-label**, **multi-modal** classification with additional **meta-information** for robust evaluation.
 
 ### Columns
 
@@ -199,10 +199,11 @@ For a detailed example of how we generate the tables used in our paper, please s
 If you find VGGSounder useful for your research and applications, please consider citing us using this BibTeX:
 
 ```bibtex
-@article{zverevwiedemer2025vggsounder,
-  author    = {Daniil Zverev, Thaddäus Wiedemer, Ameya Prabhu, Matthias Bethge, Wieland Brendel, A. Sophia Koepke},
+@inproceedings{zverevwiedemer2025vggsounder,
+  author    = {Daniil Zverev and Thaddäus Wiedemer and Ameya Prabhu and Matthias Bethge and Wieland Brendel and A. Sophia Koepke},
   title     = {VGGSounder: Audio-Visual Evaluations for Foundation Models},
-  year      = {2025},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025}
 }
 ```
 
