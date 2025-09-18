@@ -59,7 +59,7 @@ class VGGSounder:
         csv_path: Optional[Union[str, Path]] = None,
         modality: Optional[str] = None,
         *,
-        background_music: Optional[bool] = None,
+        background_music: Optional[bool] = False,
         voice_over: Optional[bool] = None,
         static_image: Optional[bool] = None,
     ):
@@ -107,13 +107,13 @@ class VGGSounder:
 
         # Look for the CSV file in the package data directory first
         package_dir = Path(__file__).parent
-        package_data_csv = package_dir / "data" / "vggsounder.csv"
+        package_data_csv = package_dir / "data" / "vggsounder+background-music.csv"
 
         if package_data_csv.exists():
             return package_data_csv
 
         # Look for the CSV file in the project data directory (for development)
-        project_data_csv = package_dir.parent / "data" / "vggsounder.csv"
+        project_data_csv = package_dir.parent / "data" / "vggsounder+background-music.csv"
         if project_data_csv.exists():
             return project_data_csv
 
