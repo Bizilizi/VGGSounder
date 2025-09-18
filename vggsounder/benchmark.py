@@ -535,8 +535,9 @@ def compute_all_results(
     dataset_path: str | None = None,
     subset_ids: list[str] | None = None,
     modalities: list[str] = ["av", "a", "v", "a only", "v only"],
-    verbose: bool = True,
     models_filter: list[str] | None = None,
+    vggsounder: VGGSounder | None = None,
+    verbose: bool = True,
 ):
     """Compute benchmark results for all models and modalities.
 
@@ -544,15 +545,19 @@ def compute_all_results(
     specified modalities using multiple metrics including logits-based evaluation.
 
     Args:
-        out (str): Output path for pickled results. If None, results are not saved.
         models_path (str): Path to directory containing model pickle files
+        out (str): Output path for pickled results. If None, results are not saved.
         dataset_path (str | None): Path to VGGSounder dataset (if None, uses default)
         subset_ids (list[str] | None): List of video IDs to evaluate on
             (if None, uses all samples)
         modalities (list[str]): List of modalities to evaluate
         models_filter (list[str] | None): List of model names to evaluate
             (if None, uses all models)
-
+        vggsounder (VGGSounder | None):
+            VGGSounder dataset instance.
+            Default is None, which means the default dataset is used.
+        verbose (bool): Whether to print progress.
+            Default is True.
     Returns:
         dict: Nested dictionary with benchmark results
             Structure: {model_name: {modality: {metric: value}}}
@@ -567,19 +572,25 @@ def compute_all_results(
         - All .pkl files in models_path are automatically processed
     """
     # Load and prepare ground truth data
-    vggsounder = VGGSounder(dataset_path)
+    vggsounder = vggsounder or VGGSounder(
+        dataset_path, background_music=None, voice_over=None, static_image=None
+    )
+
     # Load class names and prepare ground truth for each modality
     classes = vggsounder.get_all_labels()
     gts = {
-        modality: get_gt_for_modality(vggsounder, modality, subset_ids) for modality in modalities
+        modality: get_gt_for_modality(vggsounder, modality, subset_ids)
+        for modality in modalities
     }
 
     all_results = defaultdict(dict)
 
     # Evaluate foundation models (discrete predictions)
     models_files = glob.glob(os.path.join(models_path, "*.pkl"))
-    model_names = [os.path.splitext(os.path.basename(model_file))[0] for model_file in models_files]
-    
+    model_names = [
+        os.path.splitext(os.path.basename(model_file))[0] for model_file in models_files
+    ]
+
     if models_filter is not None:
         models_files = [
             model_file
@@ -587,8 +598,13 @@ def compute_all_results(
             if name in models_filter
         ]
         model_names = [name for name in model_names if name in models_filter]
-        
-    tqdm_iterator = tqdm(zip(model_names, models_files), total=len(models_files), disable=not verbose, leave=False)
+
+    tqdm_iterator = tqdm(
+        zip(model_names, models_files),
+        total=len(models_files),
+        disable=not verbose,
+        leave=False,
+    )
 
     for model, model_file in tqdm_iterator:
 
@@ -763,6 +779,7 @@ def benchmark(
     metrics: list[tuple[str, list[str]]],
     subset_ids: list[str] | None = None,
     dataset_path: str | None = None,
+    vggsounder: VGGSounder | None = None,
     verbose: bool = True,
 ):
     """
@@ -819,6 +836,9 @@ def benchmark(
         dataset_path (str | None):
             Path to the VGGSounder dataset.
             Default is None, which means the default dataset is used.
+        vggsounder (VGGSounder | None):
+            VGGSounder dataset instance.
+            Default is None, which means the default dataset is used.
         verbose (bool, optional):
             If True, prints progress bars and status messages during computation.
             Default is True.
@@ -852,11 +872,16 @@ def benchmark(
         >>> print(table)
 
     """
+    assert (
+        vggsounder is not None or dataset_path is not None
+    ), "Either vggsounder or dataset_path must be provided"
+
     results = compute_all_results(
         models_path=models_path,
         models_filter=set(display_names.keys()) if display_names is not None else None,
         subset_ids=subset_ids,
         dataset_path=dataset_path,
+        vggsounder=vggsounder,
         verbose=verbose,
     )
 
