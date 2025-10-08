@@ -233,6 +233,10 @@ class VGGSounder:
                         match = modality_upper == "A"
                     elif current_upper == "V ONLY":
                         match = modality_upper == "V"
+                    elif current_upper == "AV":
+                        match = modality_upper == "AV"
+                    elif current_upper == "ALL":
+                        match = True # Add all labels from all modalities
                     else:
                         # Original behavior for "A", "V", "AV"
                         match = current_upper in modality_upper
@@ -274,11 +278,12 @@ class VGGSounder:
                      - "AV": audio-visual (only "AV" labels)
                      - "A ONLY": audio only (only "A" labels, excludes "AV")
                      - "V ONLY": visual only (only "V" labels, excludes "AV")
+                     - "ALL": all modalities (A + V + AV) equivalent to None
                      - None: all modalities are included.
         """
         if modality is not None:
             modality = modality.upper()
-            valid_modalities = {"A", "V", "AV", "A ONLY", "V ONLY"}
+            valid_modalities = {"A", "V", "AV", "A ONLY", "V ONLY", "ALL"}
             if modality not in valid_modalities:
                 raise ValueError(
                     f"Invalid modality '{modality}'. Must be one of {valid_modalities} or None"

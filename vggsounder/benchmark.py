@@ -97,7 +97,7 @@ METRICS = [
 
 def get_gt_for_modality(
     vggsounder: VGGSounder,
-    modality: Literal["av", "a", "v", "a only", "v only"],
+    modality: Literal["av", "a", "v", "a only", "v only", "all"],
     subset_ids: list[str] | None = None,
 ):
     """Extract ground truth labels for a specific modality subset.
@@ -105,11 +105,12 @@ def get_gt_for_modality(
     Args:
         vggsounder (VGGSounder): VGGSounder dataset instance
         modality (Literal): Target modality to extract:
-            - 'av': Audio-visual samples only
+            - 'av': Audio-visual samples only (AV)
             - 'a': All samples with audio component (A + AV)
             - 'v': All samples with visual component (V + AV)
             - 'a only': Audio-only samples (A)
             - 'v only': Visual-only samples (V)
+            - 'all': All samples (A + V + AV)
         subset_ids (list[str] | None): List of video IDs to include in the subset.
             If None, all videos are included.
     Returns:
@@ -373,6 +374,7 @@ def compute_modality_confusion(
     pred_df_a: pd.DataFrame,
     pred_df_v: pd.DataFrame,
     classes: list[str],
+    aggregate: bool = True,
 ) -> dict[str, float]:
     """Compute modality confusion rates for multi-modal model evaluation.
 
@@ -385,7 +387,7 @@ def compute_modality_confusion(
         pred_df_a (pd.DataFrame): Audio-only predictions with columns ['id', 'labels']
         pred_df_v (pd.DataFrame): Visual-only predictions with columns ['id', 'labels']
         classes (list[str]): List of all possible class names
-
+        aggregate (bool): Whether to aggregate the confusion rates across samples
     Returns:
         dict[str, float]: Confusion rates (as fractions, not percentages):
             - 'a': Audio confusion rate (audio hits when AV fails)
@@ -431,9 +433,14 @@ def compute_modality_confusion(
     hits_v = np.any(y_true & y_pred_v, axis=1)  # Visual hits
 
     # Compute confusion rates (single modality succeeds when AV fails)
-    confused_a = np.mean(hits_a & ~hits_av)  # Audio confusion
-    confused_v = np.mean(hits_v & ~hits_av)  # Visual confusion
-    confused_av = np.mean(hits_a & hits_v & ~hits_av)  # Both succeed, AV fails
+    confused_a = hits_a & ~hits_av  # Audio confusion
+    confused_v = hits_v & ~hits_av  # Visual confusion
+    confused_av = hits_a & hits_v & ~hits_av  # Both succeed, AV fails
+
+    if aggregate:
+        confused_a = np.mean(confused_a)
+        confused_v = np.mean(confused_v)
+        confused_av = np.mean(confused_av)
 
     return {
         "a": confused_a,
@@ -448,6 +455,7 @@ def compute_modality_confusion_logits(
     logit_df_a: pd.DataFrame,
     logit_df_v: pd.DataFrame,
     classes: list[str],
+    aggregate: bool = True,
 ) -> dict[str, float]:
     """Compute modality confusion rates using model logits with top-1 predictions.
 
@@ -460,6 +468,7 @@ def compute_modality_confusion_logits(
         logit_df_a (pd.DataFrame): Audio-only logits with columns ['id', 'logits']
         logit_df_v (pd.DataFrame): Visual-only logits with columns ['id', 'logits']
         classes (list[str]): List of all possible class names
+        aggregate (bool): Whether to aggregate the confusion rates across samples
 
     Returns:
         dict[str, float]: Confusion rates based on top-1 predictions (as fractions):
@@ -512,15 +521,106 @@ def compute_modality_confusion_logits(
     hits_v = np.any(y_true & y_pred_v, axis=1)
 
     # Compute confusion rates
-    confused_a = np.mean(hits_a & ~hits_av)
-    confused_v = np.mean(hits_v & ~hits_av)
-    confused_av = np.mean(hits_a & hits_v & ~hits_av)
+    confused_a = hits_a & ~hits_av
+    confused_v = hits_v & ~hits_av
+    confused_av = hits_a & hits_v & ~hits_av
+
+    if aggregate:
+        confused_a = np.mean(confused_a)
+        confused_v = np.mean(confused_v)
+        confused_av = np.mean(confused_av)
 
     return {
         "a": confused_a,
         "v": confused_v,
         "av": confused_av,
     }
+
+
+def analyze_modality_confusion_detailed(
+    models_path: str,
+    model_name: str,
+    *,
+    dataset_path: str | None = None,
+    subset_ids: list[str] | None = None,
+    vggsounder: VGGSounder | None = None,
+) -> pd.DataFrame:
+    """Analyze modality confusion at the sample level with detailed predictions.
+
+    This function provides a detailed breakdown of confused samples, showing
+    ground truth labels alongside unimodal and multimodal predictions with
+    confusion indicators for each type.
+
+    Args:
+        models_path (str): Path to directory containing model pickle files
+        model_name (str): Name of the model to analyze (without .pkl extension)
+        dataset_path (str | None): Path to VGGSounder dataset (if None, uses default)
+        subset_ids (list[str] | None): List of video IDs to evaluate on
+        vggsounder (VGGSounder | None): VGGSounder dataset instance
+
+    Returns:
+        pd.DataFrame: Detailed confusion analysis with columns:
+            - 'id': Sample ID
+            - 'ground_truth': Ground truth labels
+            - 'pred_av': Audio-visual predictions
+            - 'pred_a': Audio-only predictions
+            - 'pred_v': Visual-only predictions
+            - 'confused_a': Audio confusion (audio hits when AV fails)
+            - 'confused_v': Visual confusion (visual hits when AV fails)
+            - 'confused_av': Combined confusion (both A and V hit when AV fails)
+
+    Note:
+        - Returns only samples that exhibit at least one type of confusion
+        - Uses compute_all_results with aggregate_modality_confusion=False
+        - Automatically detects whether model has logits or discrete predictions
+    """
+    # Use compute_all_results to get non-aggregated confusion results and data
+    results = compute_all_results(
+        models_path=models_path,
+        models_filter=[model_name],
+        dataset_path=dataset_path,
+        subset_ids=subset_ids,
+        vggsounder=vggsounder,
+        verbose=False,
+        aggregate_modality_confusion=False,
+        return_model_predictions=True,
+        return_ground_truth=True,
+    )
+
+    # Extract confusion masks and data from results
+    gt_all = results["ground_truth"]["all"]
+    pred_av = results["model_predictions"][model_name]["av"]
+    pred_a = results["model_predictions"][model_name]["a"]
+    pred_v = results["model_predictions"][model_name]["v"]
+
+    # Merge all dataframes
+    merged_df = pd.merge(gt_all, pred_av, on="id", how="left", suffixes=("_gt", "_av"))
+    merged_df = pd.merge(merged_df, pred_a, on="id", how="left")
+    merged_df = merged_df.rename(columns={"labels": "labels_a"})
+    merged_df = pd.merge(merged_df, pred_v, on="id", how="left")
+    merged_df = merged_df.rename(columns={"labels": "labels_v"})
+
+    # Filter to only samples with any type of confusion
+    confusion_masks = results[model_name]
+    any_confusion_mask = (
+        confusion_masks["a"]["mu"] | confusion_masks["v"]["mu"] | confusion_masks["av"]["mu"]
+    )
+
+    # Create results DataFrame with only confused samples
+    confused_samples = pd.DataFrame(
+        {
+            "id": merged_df["id"][any_confusion_mask],
+            "ground_truth": merged_df["labels_gt"][any_confusion_mask],
+            "pred_av": merged_df["labels_av"][any_confusion_mask],
+            "pred_a": merged_df["labels_a"][any_confusion_mask],
+            "pred_v": merged_df["labels_v"][any_confusion_mask],
+            "confused_a": confusion_masks["a"]["mu"][any_confusion_mask],
+            "confused_v": confusion_masks["v"]["mu"][any_confusion_mask],
+            "confused_av": confusion_masks["av"]["mu"][any_confusion_mask],
+        }
+    ).reset_index(drop=True)
+
+    return confused_samples
 
 
 # =============================================================================
@@ -538,6 +638,9 @@ def compute_all_results(
     models_filter: list[str] | None = None,
     vggsounder: VGGSounder | None = None,
     verbose: bool = True,
+    aggregate_modality_confusion: bool = True,
+    return_model_predictions: bool = False,
+    return_ground_truth: bool = False,
 ):
     """Compute benchmark results for all models and modalities.
 
@@ -558,6 +661,12 @@ def compute_all_results(
             Default is None, which means the default dataset is used.
         verbose (bool): Whether to print progress.
             Default is True.
+        aggregate_modality_confusion (bool): Whether to aggregate the modality confusion across samples.
+            Default is True.
+        return_model_predictions (bool): Whether to return the model predictions.
+            Default is False.
+        return_ground_truth (bool): Whether to return the ground truth.
+            Default is False.
     Returns:
         dict: Nested dictionary with benchmark results
             Structure: {model_name: {modality: {metric: value}}}
@@ -580,7 +689,7 @@ def compute_all_results(
     classes = vggsounder.get_all_labels()
     gts = {
         modality: get_gt_for_modality(vggsounder, modality, subset_ids)
-        for modality in modalities
+        for modality in ["av", "a", "v", "a only", "v only", "all"]
     }
 
     all_results = defaultdict(dict)
@@ -606,6 +715,7 @@ def compute_all_results(
         leave=False,
     )
 
+    model_predictions = dict()
     for model, model_file in tqdm_iterator:
 
         # Set description for tqdm
@@ -616,6 +726,7 @@ def compute_all_results(
             modality: load_test_predictions(model_file, modality)
             for modality in modalities
         }
+        model_predictions[model] = preds
 
         # Compute metrics for each modality
         for modality in modalities:
@@ -639,11 +750,21 @@ def compute_all_results(
         # Compute modality confusion analysis
         if contains_logits:
             mus = compute_modality_confusion_logits(
-                gts["av"], preds["av"], preds["a"], preds["v"], classes
+                gts["all"],
+                preds["av"],
+                preds["a"],
+                preds["v"],
+                classes,
+                aggregate=aggregate_modality_confusion,
             )
         else:
             mus = compute_modality_confusion(
-                gts["av"], preds["av"], preds["a"], preds["v"], classes
+                gts["all"],
+                preds["av"],
+                preds["a"],
+                preds["v"],
+                classes,
+                aggregate=aggregate_modality_confusion,
             )
         for modality in ["av", "a", "v"]:
             all_results[model][modality]["mu"] = mus[modality]
@@ -651,6 +772,12 @@ def compute_all_results(
     # Save results to pickle file
     if out is not None:
         pk.dump(all_results, open(out, "wb"))
+
+    if return_model_predictions:
+        all_results["model_predictions"] = model_predictions
+
+    if return_ground_truth:
+        all_results["ground_truth"] = gts
 
     return all_results
 

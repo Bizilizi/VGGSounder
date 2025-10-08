@@ -193,6 +193,79 @@ print(results_table)
 
 For a detailed example of how we generate the tables used in our paper, please see the [example notebook](https://github.com/Bizilizi/VGGSounder/blob/main/experiments/visualisations/metrics.ipynb).
 
+### Detailed Modality Confusion Analysis
+
+VGGSounder provides a specialized function for analyzing modality confusion at the sample level, helping you understand why certain samples exhibit confusion between unimodal and multimodal predictions.
+
+```python
+from vggsounder.benchmark import analyze_modality_confusion_detailed
+from vggsounder import VGGSounder
+
+# Analyze modality confusion for a specific model
+confusion_analysis = analyze_modality_confusion_detailed(
+    models_path="path/to/model/pickles",
+    model_name="gemini-1.5-flash",  # Model name without .pkl extension
+    vggsounder=VGGSounder(background_music=None, voice_over=None, static_image=None)
+)
+
+print(f"Found {len(confusion_analysis)} samples with modality confusion")
+
+# Filter by specific confusion types
+audio_confused = confusion_analysis[confusion_analysis['confused_a'] == True]
+visual_confused = confusion_analysis[confusion_analysis['confused_v'] == True]
+combined_confused = confusion_analysis[confusion_analysis['confused_av'] == True]
+
+print(f"Audio confusion: {len(audio_confused)} samples")
+print(f"Visual confusion: {len(visual_confused)} samples")
+print(f"Combined confusion: {len(combined_confused)} samples")
+
+# Examine specific confused samples
+display_cols = ['id', 'ground_truth', 'pred_a', 'pred_v', 'pred_av', 'confused_a', 'confused_v', 'confused_av']
+print("\nFirst 3 audio-confused samples:")
+print(audio_confused[display_cols].head(3))
+
+# Example: Find samples that are audio-confused but not visual-confused
+audio_only_confused = confusion_analysis[
+    (confusion_analysis['confused_a'] == True) & 
+    (confusion_analysis['confused_v'] == False)
+]
+print(f"Audio-only confusion: {len(audio_only_confused)} samples")
+```
+
+**Example Output:**
+```
+Total samples analyzed: 2625
+Audio-confused samples: 2228
+Visual-confused samples: 612
+Combined-confused samples: 215
+
+First 3 audio-confused samples:
+                   id                                             ground_truth                                      pred_a              pred_v             pred_av  confused_a  confused_v  confused_av
+0  -0jeONf82dE_000021              [horse neighing, male speech, man speaking]                 [male speech, man speaking]                  []   [horse clip-clop]        True       False        False
+1  -3Kv4fdm7Uk_000030  [plastic bottle crushing, playing flute, playing sitar]  [male speech, man speaking, playing flute]  [playing steelpan]  [playing steelpan]        True       False        False
+2  -3RH8_aeZkk_000105                              [male speech, man speaking]                 [male speech, man speaking]                  []                  []        True       False        False
+
+Example sample details:
+id: -0jeONf82dE_000021
+ground_truth: ['horse neighing', 'male speech, man speaking']
+pred_a: ['male speech, man speaking']
+pred_v: []
+pred_av: ['horse clip-clop']
+confused_a: True
+confused_v: False
+confused_av: False
+```
+
+**Output DataFrame Columns:**
+- `id`: Sample ID
+- `ground_truth`: Ground truth labels
+- `pred_av`, `pred_a`, `pred_v`: Predictions for each modality
+- `confused_a`: Boolean - audio confusion (audio hits when AV fails)
+- `confused_v`: Boolean - visual confusion (visual hits when AV fails)
+- `confused_av`: Boolean - combined confusion (both A and V hit when AV fails)
+
+This analysis helps identify patterns in model failures and understand why certain samples cause modality confusion, enabling qualitative analysis of multimodal integration issues.
+
 
 ## 📑 Citation
 
