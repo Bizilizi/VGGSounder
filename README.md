@@ -71,6 +71,39 @@ piano_videos = labels.get_videos_with_labels("playing piano")
 voice_over_videos = labels.get_videos_with_meta(voice_over=True)
 ```
 
+### Downloading Dataset Samples
+You can optionally download the underlying video/audio samples and attach them to
+each `VideoData` item via `download_samples=True`. This uses the HuggingFace dataset under the hood.
+
+```python
+from vggsounder.labels import VGGSounder
+
+# Enable sample download
+vggsounder = VGGSounder(download_samples=True)
+
+# Access a sample by index or video_id
+sample = vggsounder[0]
+print(sample.video_id)
+print(sample.video is not None, sample.audio is not None)
+```
+
+To preview samples in a notebook:
+
+```python
+from IPython.display import display, Video, Audio, HTML
+import base64
+
+video_b64 = base64.b64encode(sample.video).decode("utf-8")
+video_html = f'''
+<h4>Video</h4>
+<video width="480" height="360" controls>
+    <source src="data:video/mp4;base64,{video_b64}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+'''
+display(HTML(video_html))
+```
+
 ### Advanced Usage
 
 ```python

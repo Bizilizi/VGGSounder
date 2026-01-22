@@ -1,13 +1,15 @@
 [project]
 name = "vggsounder"
-version = "0.1.5"
+version = "0.1.6"
 description = "A Python package for accessing VGGSounder dataset labels and metadata"
 readme = "README.md"
 authors = [
     { name = "Daniil Zverev", email = "daniil.zverev@tum.de" }
 ]
-requires-python = ">=3.8"
-dependencies = []
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=4.5.0",
+]
 keywords = ["audio", "video", "classification", "dataset", "vgg", "machine-learning"]
 classifiers = [
     "Development Status :: 3 - Alpha",

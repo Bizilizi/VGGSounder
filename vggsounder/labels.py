@@ -25,6 +25,8 @@ class VideoData:
     labels: List[str]
     meta_labels: Dict[str, bool]
     modalities: List[str]
+    video: Optional[bytes] = None
+    audio: Optional[bytes] = None
 
     def __repr__(self):
         return f"VideoData(video_id='{self.video_id}', labels={len(self.labels)} items, meta_labels={self.meta_labels})"
@@ -62,6 +64,8 @@ class VGGSounder:
         background_music: Optional[bool] = False,
         voice_over: Optional[bool] = None,
         static_image: Optional[bool] = None,
+        download_samples: bool = False,
+        cache_dir: Optional[Union[str, Path]] = None,
     ):
         """
         Initialize the Labels object.
@@ -96,9 +100,23 @@ class VGGSounder:
         self._video_id_to_index: Dict[str, int] = {}
         self._index_to_video_id: Dict[int, str] = {}
         self._labels: List[str] = []
+        self._download_samples: bool = download_samples
 
         self._load_data()
         self._load_labels()
+
+        if self._download_samples:
+            self._load_samples(cache_dir)
+
+    def _load_samples(self, cache_dir: Optional[Union[str, Path]]):
+        """Load samples from the dataset."""
+        from datasets import load_dataset
+
+        self.dataset = load_dataset("11hu83/vggsound", split="test", cache_dir=cache_dir)
+
+        self._id_to_indices = dict()
+        for idx, video_id in enumerate(self.dataset["video_id"]):
+            self._id_to_indices[video_id] = idx
 
     def _resolve_csv_path(self, csv_path: Optional[Union[str, Path]]) -> Path:
         """Resolve the path to the CSV file."""
@@ -113,7 +131,9 @@ class VGGSounder:
             return package_data_csv
 
         # Look for the CSV file in the project data directory (for development)
-        project_data_csv = package_dir.parent / "data" / "vggsounder+background-music.csv"
+        project_data_csv = (
+            package_dir.parent / "data" / "vggsounder+background-music.csv"
+        )
         if project_data_csv.exists():
             return project_data_csv
 
@@ -236,7 +256,7 @@ class VGGSounder:
                     elif current_upper == "AV":
                         match = modality_upper == "AV"
                     elif current_upper == "ALL":
-                        match = True # Add all labels from all modalities
+                        match = True  # Add all labels from all modalities
                     else:
                         # Original behavior for "A", "V", "AV"
                         match = current_upper in modality_upper
@@ -342,16 +362,24 @@ class VGGSounder:
                     f"Index {key} out of range for dataset of size {len(self._data)}"
                 )
             video_id = self._index_to_video_id[key]
-            return self._data[video_id]
+            labels =  self._data[video_id]
         elif isinstance(key, str):
             # Access by video_id
             if key not in self._data:
                 raise KeyError(f"Video ID '{key}' not found in dataset")
-            return self._data[key]
+            labels = self._data[key]
+            video_id = key
         else:
             raise TypeError(
                 f"Key must be str (video_id) or int (index), got {type(key)}"
             )
+            
+        if self._download_samples:
+            vggsound_sample = self.dataset[self._id_to_indices[video_id]]
+            labels.video = vggsound_sample["video"]
+            labels.audio = vggsound_sample["audio"]
+            
+        return labels
 
     def __contains__(self, video_id: str) -> bool:
         """Check if video ID exists in dataset."""
