@@ -20,6 +20,7 @@ from pathlib import Path
 
 from google import genai
 from google.genai import types
+from tqdm.auto import tqdm
 
 SCRIPT_DIR = Path(__file__).parent
 MODEL = "gemini-3-flash-preview"
@@ -47,6 +48,14 @@ class RateLimiter:
                     return
                 sleep_for = max(0.05, 60.0 - (now - self._events[0]))
             time.sleep(sleep_for)
+
+    def current_rpm(self) -> int:
+        """Return number of generate requests started in the last 60s."""
+        with self._lock:
+            now = time.monotonic()
+            while self._events and (now - self._events[0]) >= 60.0:
+                self._events.popleft()
+            return len(self._events)
 
 
 def load_all_classes() -> list[str]:
@@ -296,7 +305,13 @@ def main():
             ): vid
             for vid in video_ids
         }
-        for idx, fut in enumerate(as_completed(futures), start=1):
+        progress = tqdm(
+            as_completed(futures),
+            total=len(video_ids),
+            desc="Gemini verification",
+            unit="video",
+        )
+        for fut in progress:
             video_id, output_rows, status = fut.result()
             if status == "ok" and output_rows:
                 with open(args.output, "a", newline="", encoding="utf-8") as f:
@@ -308,7 +323,13 @@ def main():
                 success += 1
             else:
                 failures += 1
-            print(f"[{idx}/{len(video_ids)}] {video_id}: {status}")
+                tqdm.write(f"[WARN] {video_id}: {status}")
+            progress.set_postfix(
+                rpm=limiter.current_rpm(),
+                ok=success,
+                fail=failures,
+                refresh=False,
+            )
 
     print(f"Done. success={success}, failed={failures}")
 
