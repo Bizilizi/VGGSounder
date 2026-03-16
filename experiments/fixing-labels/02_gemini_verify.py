@@ -1,9 +1,10 @@
 """
 Step 2: Verify audio-only / visual-only labels using Gemini 3 Flash.
 
-For each unique video in samples.csv, downloads the video from HuggingFace,
-uploads it to the Gemini Files API, and asks the model to verify whether each
-label is correct and whether the modality assignment is accurate.
+For each unique video in samples.csv, reads the local video file from
+/tmp/vggsound/video/{video_id}.mp4, uploads it to the Gemini Files API,
+and asks the model to verify whether each label is correct and whether the
+modality assignment is accurate.
 
 Outputs gemini_proposals.csv with the same schema as cleaned_wrong_labels.csv,
 so it can be consumed by the review app.
@@ -19,19 +20,16 @@ import argparse
 import csv
 import json
 import os
-import shutil
-import tempfile
 import time
 from collections import defaultdict
 from pathlib import Path
 
 from google import genai
 from google.genai import types
-from huggingface_hub import hf_hub_download
 
 SCRIPT_DIR = Path(__file__).parent
 MODEL = "gemini-3-flash-preview"
-HF_REPO = "11hu83/vggsound"
+VIDEO_DIR = Path("/tmp/vggsound/video")
 
 
 def load_all_classes() -> list[str]:
@@ -70,21 +68,12 @@ def load_done_ids(output_path: Path) -> set[str]:
     return done
 
 
-def download_video(video_id: str) -> str | None:
-    try:
-        path = hf_hub_download(
-            repo_id=HF_REPO,
-            filename=f"video/{video_id}/video.mp4",
-            repo_type="dataset",
-        )
-        temp_dir = tempfile.gettempdir()
-        target = os.path.join(temp_dir, f"vgg_{video_id}.mp4")
-        if not os.path.exists(target):
-            shutil.copy(path, target)
-        return target
-    except Exception as e:
-        print(f"  [WARN] Failed to download {video_id}: {e}")
-        return None
+def get_local_video(video_id: str) -> str | None:
+    path = VIDEO_DIR / f"{video_id}.mp4"
+    if path.exists():
+        return str(path)
+    print(f"  [WARN] Video not found: {path}")
+    return None
 
 
 def upload_to_gemini(client: genai.Client, video_path: str) -> types.File | None:
@@ -167,7 +156,6 @@ def verify_video(
             contents=[gemini_file, prompt],
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
-                temperature=0.2,
             ),
         )
         return json.loads(response.text)
@@ -230,12 +218,21 @@ def main():
         "-o", "--output", type=Path, default=SCRIPT_DIR / "gemini_proposals.csv"
     )
     parser.add_argument(
+        "--video-dir",
+        type=Path,
+        default=VIDEO_DIR,
+        help="Directory containing {video_id}.mp4 files (default: /tmp/vggsound/video)",
+    )
+    parser.add_argument(
         "--delay", type=float, default=2.0, help="Seconds between API calls"
     )
     parser.add_argument(
         "--limit", type=int, default=None, help="Max videos to process (for testing)"
     )
     args = parser.parse_args()
+
+    global VIDEO_DIR
+    VIDEO_DIR = args.video_dir
 
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
@@ -251,9 +248,15 @@ def main():
     if args.limit:
         video_ids = video_ids[: args.limit]
 
+    # Check how many local video files exist
+    missing = sum(1 for vid in video_ids if not (VIDEO_DIR / f"{vid}.mp4").exists())
+
+    print(f"Video directory: {VIDEO_DIR}")
     print(f"Total unique videos: {len(samples)}")
     print(f"Already processed: {len(done_ids)}")
-    print(f"Remaining: {total} (processing {len(video_ids)})")
+    print(
+        f"Remaining: {total} (processing {len(video_ids)}, {missing} missing locally)"
+    )
 
     fieldnames = [
         "video_id",
@@ -276,7 +279,7 @@ def main():
 
         print(f"[{i+1}/{len(video_ids)}] {video_id} ({len(rows)} labels)")
 
-        video_path = download_video(video_id)
+        video_path = get_local_video(video_id)
         if not video_path:
             continue
 

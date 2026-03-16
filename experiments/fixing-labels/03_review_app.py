@@ -11,17 +11,14 @@ Saves output.csv in the vggsounder+background-music.csv format:
 import csv
 import json
 import os
-import shutil
-import tempfile
 from pathlib import Path
 
 import gradio as gr
 import pandas as pd
 import vggsounder as vggs
-from huggingface_hub import hf_hub_download
 
 SCRIPT_DIR = Path(__file__).parent
-HF_REPO = "11hu83/vggsound"
+VIDEO_DIR = Path("/tmp/vggsound/video")
 MAX_LABELS = 20
 
 
@@ -159,19 +156,11 @@ class ReviewBackend:
         df.to_csv(self.output_path, mode="a", index=False, header=header)
 
     def get_video_path(self, video_id: str) -> str | None:
-        try:
-            path = hf_hub_download(
-                repo_id=HF_REPO,
-                filename=f"video/{video_id}/video.mp4",
-                repo_type="dataset",
-            )
-            tmp = os.path.join(tempfile.gettempdir(), f"vgg_{video_id}.mp4")
-            if not os.path.exists(tmp):
-                shutil.copy(path, tmp)
-            return tmp
-        except Exception as e:
-            print(f"Error downloading {video_id}: {e}")
-            return None
+        path = VIDEO_DIR / f"{video_id}.mp4"
+        if path.exists():
+            return str(path)
+        print(f"Video not found: {path}")
+        return None
 
 
 def create_app():
