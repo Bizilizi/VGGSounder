@@ -68,8 +68,8 @@ def load_done_ids(output_path: Path) -> set[str]:
     return done
 
 
-def get_local_video(video_id: str) -> str | None:
-    path = VIDEO_DIR / f"{video_id}.mp4"
+def get_local_video(video_id: str, video_dir: Path = VIDEO_DIR) -> str | None:
+    path = video_dir / f"{video_id}.mp4"
     if path.exists():
         return str(path)
     print(f"  [WARN] Video not found: {path}")
@@ -230,9 +230,7 @@ def main():
         "--limit", type=int, default=None, help="Max videos to process (for testing)"
     )
     args = parser.parse_args()
-
-    global VIDEO_DIR
-    VIDEO_DIR = args.video_dir
+    video_dir = args.video_dir
 
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
@@ -248,10 +246,9 @@ def main():
     if args.limit:
         video_ids = video_ids[: args.limit]
 
-    # Check how many local video files exist
-    missing = sum(1 for vid in video_ids if not (VIDEO_DIR / f"{vid}.mp4").exists())
+    missing = sum(1 for vid in video_ids if not (video_dir / f"{vid}.mp4").exists())
 
-    print(f"Video directory: {VIDEO_DIR}")
+    print(f"Video directory: {video_dir}")
     print(f"Total unique videos: {len(samples)}")
     print(f"Already processed: {len(done_ids)}")
     print(
@@ -279,7 +276,7 @@ def main():
 
         print(f"[{i+1}/{len(video_ids)}] {video_id} ({len(rows)} labels)")
 
-        video_path = get_local_video(video_id)
+        video_path = get_local_video(video_id, video_dir)
         if not video_path:
             continue
 
