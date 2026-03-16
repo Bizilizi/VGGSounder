@@ -13,13 +13,15 @@ from vggsounder import VGGSounder
 
 
 def extract_samples(output_path: Path) -> None:
+    print(f"Extracting A-only and V-only samples from VGGSounder. Total videos: {len(VGGSounder())}")
     video_ids = set()
     for modality_filter in ("A ONLY", "V ONLY"):
-        vgg = VGGSounder(modality=modality_filter, background_music=None)
+        vgg = VGGSounder(modality=modality_filter)
+        print(f"Extracting {modality_filter} samples. Total videos: {len(vgg)}")
         for video_data in vgg:
             video_ids.add(video_data.video_id)
 
-    full_vggsounder = VGGSounder(background_music=None)
+    full_vggsounder = VGGSounder()
     rows = []
     for vid_id in video_ids:
         vd = full_vggsounder[vid_id]
