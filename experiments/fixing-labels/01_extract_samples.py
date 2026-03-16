@@ -13,23 +13,28 @@ from vggsounder import VGGSounder
 
 
 def extract_samples(output_path: Path) -> None:
-    rows = []
-
+    video_ids = set()
     for modality_filter in ("A ONLY", "V ONLY"):
         vgg = VGGSounder(modality=modality_filter, background_music=None)
         for video_data in vgg:
-            meta = video_data.meta_labels
-            for label, mod in zip(video_data.labels, video_data.modalities):
-                rows.append(
-                    {
-                        "video_id": video_data.video_id,
-                        "label": label,
-                        "modality": mod,
-                        "background_music": meta["background_music"],
-                        "static_image": meta["static_image"],
-                        "voice_over": meta["voice_over"],
-                    }
-                )
+            video_ids.add(video_data.video_id)
+
+    full_vggsounder = VGGSounder(background_music=None)
+    rows = []
+    for vid_id in video_ids:
+        vd = full_vggsounder[vid_id]
+        meta = vd.meta_labels
+        for label, mod in zip(vd.labels, vd.modalities):
+            rows.append(
+                {
+                    "video_id": vd.video_id,
+                    "label": label,
+                    "modality": mod,
+                    "background_music": meta["background_music"],
+                    "static_image": meta["static_image"],
+                    "voice_over": meta["voice_over"],
+                }
+            )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", newline="", encoding="utf-8") as f:
