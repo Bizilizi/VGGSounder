@@ -14542,7 +14542,8 @@ InYayQanY_E_000286,footsteps on snow,AV,False,False,False
 Ind-moQb3tc_000006,turkey gobbling,A,False,False,False
 InjDI0taSEQ_000350,"bee, wasp, etc. buzzing",AV,False,False,False
 InjDI0taSEQ_000350,"fly, housefly buzzing",A,False,False,False
-InjDI0taSEQ_000350,"male speech, man speaking",A,False,False,False
+InjDI0taSEQ_000350,"male speech, man speaking",AV,False,False,False
+InjDI0taSEQ_000350,people gargling,A,False,False,False
 InrS4Fdndr4_000000,fire truck siren,AV,True,False,False
 InrS4Fdndr4_000000,playing snare drum,A,True,False,False
 Io52OMUVIa0_000380,"male speech, man speaking",AV,False,False,False

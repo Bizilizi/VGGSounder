@@ -25,7 +25,9 @@ MANIFEST
 
 # Virtual environments
 .env
+.gradio
 .venv
+requirements.txt
 env/
 venv/
 ENV/

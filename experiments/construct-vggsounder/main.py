@@ -9,17 +9,20 @@ import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
 
 pd.set_option("future.no_silent_downcasting", True)
+
+
 def is_notebook():
     try:
         shell = get_ipython().__class__.__name__
-        if shell == 'ZMQInteractiveShell':
-            return True   # Jupyter notebook or qtconsole
-        elif shell == 'TerminalInteractiveShell':
+        if shell == "ZMQInteractiveShell":
+            return True  # Jupyter notebook or qtconsole
+        elif shell == "TerminalInteractiveShell":
             return False  # Terminal running IPython
         else:
             return False  # Other type (?)
     except NameError:
-        return False      # Probably standard Python interpreter
+        return False  # Probably standard Python interpreter
+
 
 IN_JUPYTER = is_notebook()
 
@@ -189,14 +192,12 @@ for id, group in tqdm(top_labelers_only.groupby("id")):
         annotator: annotator_scores_goldset_OM.get(annotator, 0)
         for annotator in video_labelers
     }
-    
+
     # Select the top 3 annotators with the highest OM scores
     top_labelers = sorted(labelers_scores, key=labelers_scores.get, reverse=True)[:3]
-    
+
     # Keep only rows for the top 3 annotators for this video
-    labels.append(
-        group[group["annotator"].isin(top_labelers)]
-    )
+    labels.append(group[group["annotator"].isin(top_labelers)])
 
 # Concatenate all filtered groups back into a single DataFrame
 top_labelers_only = pd.concat(labels)
@@ -206,13 +207,18 @@ annotators_per_video = top_labelers_only.copy()
 annotators_per_video.drop_duplicates(["id", "annotator"], inplace=True)
 annotators_per_video = annotators_per_video.groupby("id").count()["annotator"]
 
-print(f"Avg. annotators per video: {annotators_per_video.mean():.2f}, std: {annotators_per_video.std():.2f}, min: {annotators_per_video.min()}, max: {annotators_per_video.max()}")
+print(
+    f"Avg. annotators per video: {annotators_per_video.mean():.2f}, std: {annotators_per_video.std():.2f}, min: {annotators_per_video.min()}, max: {annotators_per_video.max()}"
+)
 
 # Update merged to only include the top labelers per video
 merged = top_labelers_only.copy()
 
+
 # %%
-def get_final_labels(merged, add_heuristics=True, labler_merging=True, decide_by="dawid-skene"):
+def get_final_labels(
+    merged, add_heuristics=True, labler_merging=True, decide_by="dawid-skene"
+):
     if labler_merging:
         final = utils.decide(merged, by=decide_by, verbose=False)
         final = final.dropna(subset=["value"])  # drop rows with no values
@@ -268,7 +274,7 @@ decide_by = "majority"
 # Save final labels, e.g. inhouse + mturk + heuristics
 final = get_final_labels(merged, decide_by=decide_by)
 final.to_csv(
-    f"data/intermediate-tables/{threshold:.1f}_{decide_by}.csv",
+    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}.csv",
     index=True,
 )
 
@@ -276,16 +282,19 @@ final.to_csv(
 # Save inhouse + heuristics
 final_inhouse = get_final_labels(goldstandard_inhouse, labler_merging=False)
 final_inhouse.to_csv(
-    f"data/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+heuristic.csv",
+    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+heuristic.csv",
     index=True,
 )
 # %%
 # Save inhouse + mturk
-final_inhouse_mturk = get_final_labels(merged, add_heuristics=False, decide_by=decide_by)
+final_inhouse_mturk = get_final_labels(
+    merged, add_heuristics=False, decide_by=decide_by
+)
 final_inhouse_mturk.to_csv(
-    f"data/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+mturk.csv",
+    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+mturk.csv",
     index=True,
 )
+
 
 # %%
 # get pivoted labels function
@@ -326,13 +335,13 @@ def get_pivoted_labels(final):
 # Save pivoted labels
 final_pivoted = get_pivoted_labels(final)
 final_pivoted.to_csv(
-    f"data/supplimentary/vggsounder+background-music.csv",
+    f"supplimentary/data/vggsounder+background-music_0.1.6.csv",
     index=False,
 )
 
-vggsounder = final_pivoted[~final_pivoted["background_music"]]
-vggsounder.to_csv(
-    f"data/vggsounder.csv",
+vggsounder_v016 = final_pivoted[~final_pivoted["background_music"]]
+vggsounder_v016.to_csv(
+    f"supplimentary/data/vggsounder_0.1.6.csv",
     index=False,
 )
 
@@ -340,7 +349,7 @@ vggsounder.to_csv(
 # Save inhouse + heuristics pivoted labels
 final_inhouse_pivoted = get_pivoted_labels(final_inhouse)
 final_inhouse_pivoted.to_csv(
-    f"data/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+heuristic_formated.csv",
+    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+heuristic_formated.csv",
     index=False,
 )
 
@@ -348,6 +357,56 @@ final_inhouse_pivoted.to_csv(
 # Save inhouse + mturk pivoted labels
 final_inhouse_mturk_pivoted = get_pivoted_labels(final_inhouse_mturk)
 final_inhouse_mturk_pivoted.to_csv(
-    f"data/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+mturk_formated.csv",
+    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+mturk_formated.csv",
     index=False,
 )
+
+# %%
+# INTEGRATE MANUAL RE-ANNOTATIONS (may_2026) -> VGGSounder v0.1.6
+# may_2026.csv has only label + modality; meta labels are preserved per-video
+# from the unchanged pipeline output `final_pivoted`.
+manual = pd.read_csv(
+    "supplimentary/manual-annotations/may_2026.csv", keep_default_na=False
+)
+
+# Unannotated samples -> delete set (derived inline from may_2026.csv)
+to_delete_ids = set(manual[manual["label"] == ""]["video_id"])
+
+# Real replacement annotations
+manual = manual[(manual["label"] != "") & (manual["modality"] != "")]
+manual_ids = set(manual["video_id"])
+
+meta_by_video = final_pivoted.drop_duplicates("video_id").set_index("video_id")[
+    utils.META_CLASSES
+]
+
+manual_rows = []
+for video_id, group in manual.groupby("video_id"):
+    meta = (
+        meta_by_video.loc[video_id].to_dict()
+        if video_id in meta_by_video.index
+        else {m: False for m in utils.META_CLASSES}
+    )
+    for _, r in group.iterrows():
+        manual_rows.append(
+            {
+                "video_id": video_id,
+                "label": r["label"],
+                "modality": r["modality"],
+                **meta,
+            }
+        )
+manual_pivoted = pd.DataFrame(manual_rows, columns=final_pivoted.columns)
+
+final_pivoted = pd.concat(
+    [
+        final_pivoted[~final_pivoted["video_id"].isin(manual_ids | to_delete_ids)],
+        manual_pivoted,
+    ]
+)
+
+final_pivoted.to_csv(
+    "supplimentary/data/vggsounder+background-music.csv", index=False
+)
+vggsounder = final_pivoted[~final_pivoted["background_music"]]
+vggsounder.to_csv("supplimentary/data/vggsounder.csv", index=False)

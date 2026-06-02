@@ -1,6 +1,6 @@
 [project]
 name = "vggsounder"
-version = "0.1.6"
+version = "1.0.0"
 description = "A Python package for accessing VGGSounder dataset labels and metadata"
 readme = "README.md"
 authors = [
@@ -39,8 +39,10 @@ dev = [
     "jupyter>=1.1.1",
     "matplotlib>=3.10.5",
     "numpy>=2.3.2",
+    "opencv-python>=4.13.0.92",
     "pandas>=2.3.1",
     "scikit-learn>=1.7.1",
+    "seaborn>=0.13.2",
     "tqdm>=4.67.1",
 ]
 
