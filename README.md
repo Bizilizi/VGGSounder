@@ -17,7 +17,7 @@ VGGSounder: Audio-Visual Evaluations for Foundation Models</a></h1>
 
 ## 📰 News
 
-* **[02.06.2026]**  🏷️ Released VGGSounder **v1.0.0** with a label-quality pass: ~3,600 noisy samples were re-reviewed by human annotators (3,176 relabeled, 182 removed). You can still use the previous labels via `pip install vggsounder==0.1.6` or by passing `csv_path` to an older label file. See the [release notes](https://github.com/Bizilizi/VGGSounder/releases/tag/1.0.0) for details.
+* **[02.06.2026]**  🏷️ Released VGGSounder **v1.0.0** with a label-quality pass: ~3,600 noisy samples were re-reviewed by human annotators. You can still use the previous labels via `pip install vggsounder==0.1.6` or by passing `csv_path` to an older label file. See the [release notes](https://github.com/Bizilizi/VGGSounder/releases/tag/1.0.0) for details.
 * **[11.06.2025]**  📃 Released technical report of VGGSounder. Contains detailed discussion on how we built the first multimodal benchmark for video tagging with complete per-modality annotations for every class.
 
 
