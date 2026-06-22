@@ -21,7 +21,8 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
+experiments/fixing-labels/
+experiments/may-2026-analysis/
 
 # Virtual environments
 .env

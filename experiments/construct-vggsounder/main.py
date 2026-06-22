@@ -1,52 +1,75 @@
 # %%
+import os
+from pathlib import Path
+
 import utils
-import json
-import glob
 import numpy as np
 import pandas as pd
-from IPython.display import display
-import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
 
 pd.set_option("future.no_silent_downcasting", True)
+
+
+"""
+Available options:
+- bayesian-logodds
+- dawid-skene
+- dawid-skene-seeded ❤️‍🔥
+- expert-override
+- majority
+- precision-recall
+- reliability-weighted
+- soft-negative
+"""
+DECIDE_BY = "dawid-skene-seeded"
+
+"""
+Available options:
+- inhouse-override ❤️‍🔥
+- inhouse-boost
+"""
+VARIANT = "inhouse-override"
+
+# Algorithm parameters (defaults live in utils.decide; override here if desired).
+ALGO_PARAMS = {}
+TIE_BREAKER = None
+if VARIANT == "inhouse-boost":
+    # majority: inhouse votes count +-1.5; soft-negative: same boost factor.
+    ALGO_PARAMS["inhouse_boost"] = 1.5
+    TIE_BREAKER = "inhouse"
+
+# Reliability tables, filled in once the goldstandard decision is available.
+ANNOTATOR_WEIGHTS = {}
+DS_INITIAL_ERROR = None
+DS_TRUE_LABELS = None
 
 
 def is_notebook():
     try:
         shell = get_ipython().__class__.__name__
         if shell == "ZMQInteractiveShell":
-            return True  # Jupyter notebook or qtconsole
-        elif shell == "TerminalInteractiveShell":
-            return False  # Terminal running IPython
-        else:
-            return False  # Other type (?)
+            return True
+        return False
     except NameError:
-        return False  # Probably standard Python interpreter
+        return False
 
 
 IN_JUPYTER = is_notebook()
-
 if not IN_JUPYTER:
     display = print
-    plt.show = lambda: None
 
 # CORRECT ORIGINAL LABELS and ADD META LABELS
 # %%
-# Extract data for original labels and meta labels from goldstandard annotations
-# These annotations did not specifically include meta labels, so they have to be
-# inferred from the classes
 goldstandard = utils.get_gold_standard_df()
 display(goldstandard.head())
 
 # %%
-# Format inhouse annotation for original labels and meta labels
 inhouse = utils.get_inhouse_df()
 display(inhouse.head())
 
 # %%
-# Get preliminary decisions based on goldstandard and inhouse labels
+# Preliminary decisions based on goldstandard and inhouse labels
 goldstandard_inhouse = pd.concat([goldstandard, inhouse])
-
 goldstandard_inhouse["is_goldset"] = goldstandard_inhouse["id"].isin(goldstandard["id"])
 goldstandard_inhouse_goldset = goldstandard_inhouse[
     goldstandard_inhouse["is_goldset"]
@@ -55,107 +78,69 @@ goldstandard_inhouse_nongoldset = goldstandard_inhouse[
     ~goldstandard_inhouse["is_goldset"]
 ].drop(columns=["is_goldset"])
 
-# On the goldset, we need to merge decisions from 5 annotations
+# On the goldset, merge decisions from 5 annotations
 preliminary_goldset = utils.decide(
     goldstandard_inhouse_goldset, by="dawid-skene", verbose=True
 )
 preliminary_goldset_OM = preliminary_goldset[
     preliminary_goldset["is_original"] | preliminary_goldset["is_meta"]
 ]
-display(preliminary_goldset_OM.head())
 preliminary_goldset_other = preliminary_goldset[
     ~preliminary_goldset["is_original"] & ~preliminary_goldset["is_meta"]
 ]
-display(preliminary_goldset_other.head())
 
-# On everything else, we just have a single annotation
-# This is actually just `inhouse` without goldstandard IDs
+# Everything else has a single annotation (inhouse without goldstandard IDs)
 preliminary_nongoldset_OM = goldstandard_inhouse_nongoldset.drop(columns=["annotator"])
-display(preliminary_nongoldset_OM.head())
 
 # %%
-# Format results from MTurk run for original and meta labels
+# Format results from MTurk runs
 mturk_om_run = utils.get_mturk_original_meta_df()
-display(mturk_om_run.head())
-
-# %%
-# Format results from first MTurk run
-# This run included original labels, meta labels, and additional labels
 mturk_first_run = utils.get_mturk_df(consider_hits_independent=False)
-display(mturk_first_run.head())
-
-# %%
-# Merge Mturk results
 mturk = pd.concat([mturk_om_run, mturk_first_run])
 display(mturk.head())
 
 # %%
-# Grade all annotators
-# On original and meta labels for goldstandard
-# Use agreement (accuracy), since class set is fixed
-# Here, we have higher confidence in our preliminary labels, since it's 5 annotators
+# Grade all annotators (accuracy) for blacklisting / top-3 selection
 annotator_scores_goldset_OM = utils.get_annotator_accuracy(
     mturk, preliminary_goldset_OM
 )
-
-# On original and meta labels for all but goldstandard
-# Use agreement (accuracy), since class set is fixed
-# Here, we have lower confidence in our preliminary labels, since it's just 1 annotator
 annotator_scores_nongoldset_OM = utils.get_annotator_accuracy(
     mturk, preliminary_nongoldset_OM
 )
-
-# On other classes for goldstandard
-# Use F1 score, since not all classes might overlap
 annotator_scores_goldset_other_acc = utils.get_annotator_accuracy(
     mturk, preliminary_goldset_other
 )
-annotator_scores_goldset_other_f1 = utils.get_annotator_f1(
-    mturk, preliminary_goldset_other
-)
-
-fig, axs = plt.subplots(1, 4, figsize=(12, 2), constrained_layout=True)
-
-axs[0].hist(
-    list(annotator_scores_goldset_OM.values()),
-    bins=50,
-    cumulative=True,
-    density=True,
-    histtype="step",
-)
-axs[0].set_title("Goldset OM")
-axs[1].hist(
-    list(annotator_scores_nongoldset_OM.values()),
-    bins=50,
-    cumulative=True,
-    density=True,
-    histtype="step",
-)
-axs[1].set_title("Nongoldset OM")
-axs[2].hist(
-    list(annotator_scores_goldset_other_acc.values()),
-    bins=50,
-    cumulative=True,
-    density=True,
-    histtype="step",
-)
-axs[2].set_title("Goldset other acc")
-axs[3].hist(
-    list(annotator_scores_goldset_other_f1.values()),
-    bins=50,
-    cumulative=True,
-    density=True,
-    histtype="step",
-)
-axs[3].set_title("Goldset other f1")
-for ax in axs:
-    ax.set_xticks(np.arange(0, 1.1, 0.25))
-plt.show()
 
 # %%
-# Blacklist annotators with aggreement below a threshold
-threshold = 0.4
+# Reliability tables used by the weighted / bayesian / seeded-DS algorithms.
+# Computed against the trusted goldset decision (precision/recall/f1/tpr/tnr).
+prf = utils.get_annotator_prf(mturk, preliminary_goldset)
+conf = utils.get_annotator_confusion(mturk, preliminary_goldset)
+ANNOTATOR_WEIGHTS = {
+    annotator: {**prf.get(annotator, {}), **conf.get(annotator, {})}
+    for annotator in set(prf) | set(conf)
+}
+DS_INITIAL_ERROR = utils.get_annotator_confusion_counts(mturk, preliminary_goldset)
+DS_TRUE_LABELS = preliminary_goldset
 
+if VARIANT == "inhouse-boost":
+    # dawid-skene-seeded: strong diagonal prior counts so EM starts trusting
+    # inhouse (it has no MTurk-derived confusion history).
+    INHOUSE_PRIOR_COUNT = 50.0
+    inhouse_prior = pd.DataFrame(
+        [
+            {"True": INHOUSE_PRIOR_COUNT, "False": 0.0},  # observed True
+            {"True": 0.0, "False": INHOUSE_PRIOR_COUNT},  # observed False
+        ],
+        index=pd.MultiIndex.from_tuples(
+            [("inhouse", "True"), ("inhouse", "False")], names=["worker", "label"]
+        ),
+    )
+    DS_INITIAL_ERROR = pd.concat([DS_INITIAL_ERROR, inhouse_prior])
+
+# %%
+# Blacklist annotators with agreement below a threshold
+threshold = 0.4
 annotators = (
     set(annotator_scores_goldset_OM.keys())
     | set(annotator_scores_nongoldset_OM.keys())
@@ -169,58 +154,67 @@ blacklist = [
     or annotator_scores_goldset_other_acc.get(annotator, 1) < threshold
 ]
 print(f"Ignoring {len(blacklist)} ({len(blacklist) / len(annotators):.2%}) annotators")
-print(
-    f"Keep in mind that 'annotators' refers to worker-HIT pairs if `consider_hits_independent=True`"
-)
 
 # %%
-# Merge good annotators with our labels
+# Merge good annotators with our labels, then keep only top-3 labelers per video.
+# COMMON GEN-3 CHANGE: `inhouse` has no MTurk goldset score (defaults to 0) and
+# used to be silently dropped here on 99.2% of videos; it is now ALWAYS kept
+# alongside the top-3 scored workers (videos get up to 4 annotators).
 merged = pd.concat([goldstandard, inhouse, mturk[~mturk["annotator"].isin(blacklist)]])
-display(merged.head())
 
-
-# Make a copy of the merged DataFrame to filter for top labelers
 top_labelers_only = merged.copy()
 labels = []
-
-# Iterate over each video (grouped by 'id')
+inhouse_kept = 0
 for id, group in tqdm(top_labelers_only.groupby("id")):
-    # Get unique annotators for this video
     video_labelers = group["annotator"].unique()
-    # Get the goldset OM score for each annotator (default to 0 if not found)
     labelers_scores = {
         annotator: annotator_scores_goldset_OM.get(annotator, 0)
         for annotator in video_labelers
     }
-
-    # Select the top 3 annotators with the highest OM scores
-    top_labelers = sorted(labelers_scores, key=labelers_scores.get, reverse=True)[:3]
-
-    # Keep only rows for the top 3 annotators for this video
+    top_labelers = set(
+        sorted(labelers_scores, key=labelers_scores.get, reverse=True)[:3]
+    )
+    if "inhouse" in video_labelers:
+        top_labelers.add("inhouse")
+        inhouse_kept += 1
     labels.append(group[group["annotator"].isin(top_labelers)])
-
-# Concatenate all filtered groups back into a single DataFrame
 top_labelers_only = pd.concat(labels)
 
-# Calculate statistics about the number of annotators per video after filtering
 annotators_per_video = top_labelers_only.copy()
 annotators_per_video.drop_duplicates(["id", "annotator"], inplace=True)
 annotators_per_video = annotators_per_video.groupby("id").count()["annotator"]
-
+n_videos = annotators_per_video.shape[0]
 print(
-    f"Avg. annotators per video: {annotators_per_video.mean():.2f}, std: {annotators_per_video.std():.2f}, min: {annotators_per_video.min()}, max: {annotators_per_video.max()}"
+    f"Avg. annotators per video: {annotators_per_video.mean():.2f}, "
+    f"std: {annotators_per_video.std():.2f}, min: {annotators_per_video.min()}, "
+    f"max: {annotators_per_video.max()}"
 )
-
-# Update merged to only include the top labelers per video
+print(
+    f"Inhouse kept on {inhouse_kept} / {n_videos} videos "
+    f"({inhouse_kept / n_videos:.2%})"
+)
 merged = top_labelers_only.copy()
 
 
 # %%
 def get_final_labels(
-    merged, add_heuristics=True, labler_merging=True, decide_by="dawid-skene"
+    merged, add_heuristics=True, labler_merging=True, decide_by="majority"
 ):
     if labler_merging:
-        final = utils.decide(merged, by=decide_by, verbose=False)
+        final = utils.decide(
+            merged,
+            by=decide_by,
+            tie_breaker=TIE_BREAKER,  # only used by 'majority' (inhouse-boost)
+            count_missing_as_false=False,  # absent vote = abstain (not shown)
+            annotator_weights=ANNOTATOR_WEIGHTS,
+            algo_params=ALGO_PARAMS,
+            ds_initial_error=DS_INITIAL_ERROR,
+            ds_true_labels=DS_TRUE_LABELS,
+        )
+        if VARIANT == "inhouse-override":
+            # Hard-override BEFORE the value==True filter so an inhouse "no"
+            # deletes a merged label and an inhouse "yes" restores one.
+            final = utils.apply_inhouse_override(final, inhouse)
         final = final.dropna(subset=["value"])  # drop rows with no values
         final = final[final["value"]]  # keep only records of labels we keep
     else:
@@ -247,59 +241,12 @@ def get_final_labels(
     print(f"Avg. meta labels per video: {avg_meta_labels:.2f}")
     avg_labels = final[~final["is_meta"]].groupby("id").size().mean()
     print(f"Avg. non-meta labels per video: {avg_labels:.2f}")
-    if add_heuristics:
-        avg_nonheuristic_labels = (
-            final[~final["is_meta"] & ~final["is_heuristic"]]
-            .groupby("id")
-            .size()
-            .mean()
-        )
-        print(
-            f"Avg. non-meta non-heuristic labels per video: {avg_nonheuristic_labels:.2f}"
-        )
-
-    # Get number of videos with each number of labels
-    labels_per_video = final[~final["is_meta"]].groupby("id").size()
-    labels_per_video = labels_per_video.apply(lambda x: 10 if x >= 10 else x)
-
-    labels_per_video.value_counts().sort_index().plot(kind="bar")
-    plt.show()
 
     return final
 
 
 # %%
-decide_by = "majority"
-
-# Save final labels, e.g. inhouse + mturk + heuristics
-final = get_final_labels(merged, decide_by=decide_by)
-final.to_csv(
-    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}.csv",
-    index=True,
-)
-
-# %%
-# Save inhouse + heuristics
-final_inhouse = get_final_labels(goldstandard_inhouse, labler_merging=False)
-final_inhouse.to_csv(
-    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+heuristic.csv",
-    index=True,
-)
-# %%
-# Save inhouse + mturk
-final_inhouse_mturk = get_final_labels(
-    merged, add_heuristics=False, decide_by=decide_by
-)
-final_inhouse_mturk.to_csv(
-    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+mturk.csv",
-    index=True,
-)
-
-
-# %%
-# get pivoted labels function
 def get_pivoted_labels(final):
-    # Save labels in pivoted format
     final_grouped = final.groupby(["id"])
 
     rows = []
@@ -332,61 +279,132 @@ def get_pivoted_labels(final):
 
 
 # %%
-# Save pivoted labels
-final_pivoted = get_pivoted_labels(final)
-final_pivoted.to_csv(
-    f"supplimentary/data/vggsounder+background-music_0.1.6.csv",
-    index=False,
-)
+# ----------------------------------------------------------------------------- #
+# Pivoted-format helpers used by the gen-4 final chain.
+# ----------------------------------------------------------------------------- #
+def modality_union(*mods):
+    """Union of 'A'/'V'/'AV' modality strings -> ordered 'A'/'V'/'AV'."""
+    chars = set()
+    for m in mods:
+        for c in str(m):
+            if c in ("A", "V"):
+                chars.add(c)
+    return ("A" if "A" in chars else "") + ("V" if "V" in chars else "")
 
-vggsounder_v016 = final_pivoted[~final_pivoted["background_music"]]
-vggsounder_v016.to_csv(
-    f"supplimentary/data/vggsounder_0.1.6.csv",
-    index=False,
+
+def _meta_lookup(video_id, meta_by_video):
+    if video_id in meta_by_video.index:
+        return meta_by_video.loc[video_id].to_dict()
+    return {m: False for m in utils.META_CLASSES}
+
+
+def apply_reverts(pivoted, verdicts, meta_by_video):
+    """Revert every Gemini exists==True (video, label, modality) into `pivoted`.
+
+    Unions the reverted modality onto an existing (video, label) row, or inserts
+    a new row (meta taken from the video's existing meta, else all-False).
+    Reverts win over may-2026 deletions.
+    """
+    acc = {}
+    for _, r in pivoted.iterrows():
+        acc[(r["video_id"], r["label"])] = {
+            "modality": r["modality"],
+            **{m: r[m] for m in utils.META_CLASSES},
+        }
+    for _, r in verdicts.iterrows():
+        key = (r["video_id"], r["label"])
+        if key in acc:
+            acc[key]["modality"] = modality_union(acc[key]["modality"], r["modality"])
+        else:
+            meta = _meta_lookup(r["video_id"], meta_by_video)
+            acc[key] = {"modality": r["modality"], **meta}
+    rows = [
+        {
+            "video_id": k[0],
+            "label": k[1],
+            "modality": v["modality"],
+            **{m: v[m] for m in utils.META_CLASSES},
+        }
+        for k, v in acc.items()
+    ]
+    return pd.DataFrame(rows, columns=pivoted.columns)
+
+
+def apply_heuristics_pivoted(pivoted):
+    """Apply utils.HEURISTIC label expansion on the pivoted dataset (heuristics last).
+
+    For each row whose label is a heuristic key, add the mapped label(s) with the
+    same modality + meta + video, then dedup on (video, label) unioning modality.
+    """
+    acc = {}
+
+    def add(video_id, label, modality, meta):
+        key = (video_id, label)
+        if key in acc:
+            acc[key]["modality"] = modality_union(acc[key]["modality"], modality)
+        else:
+            acc[key] = {"modality": modality, **meta}
+
+    for _, r in pivoted.iterrows():
+        meta = {m: r[m] for m in utils.META_CLASSES}
+        add(r["video_id"], r["label"], r["modality"], meta)
+        if r["label"] in utils.HEURISTIC:
+            for add_class in utils.HEURISTIC[r["label"]]:
+                add(r["video_id"], add_class, r["modality"], meta)
+    rows = [
+        {
+            "video_id": k[0],
+            "label": k[1],
+            "modality": v["modality"],
+            **{m: v[m] for m in utils.META_CLASSES},
+        }
+        for k, v in acc.items()
+    ]
+    return pd.DataFrame(rows, columns=pivoted.columns)
+
+
+# %%
+# Save final labels (inhouse + mturk + heuristics) for the selected algorithm.
+# This `final` (merge + heuristics) backs the pre-manual _0.1.6 outputs below,
+# kept for structural parity with the other generations.
+final = get_final_labels(merged, decide_by=DECIDE_BY)
+final.to_csv(
+    f"supplimentary/intermediate-tables/{threshold:.1f}_{DECIDE_BY}_inhouse+mturk_formated.csv",
+    index=True,
 )
 
 # %%
-# Save inhouse + heuristics pivoted labels
-final_inhouse_pivoted = get_pivoted_labels(final_inhouse)
-final_inhouse_pivoted.to_csv(
-    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+heuristic_formated.csv",
-    index=False,
+# Pre-manual pivoted labels (v0.1.6), with and without background music.
+final_pivoted_premanual = get_pivoted_labels(final)
+final_pivoted_premanual.to_csv(
+    "supplimentary/data/vggsounder+background-music_0.1.6.csv", index=False
+)
+final_pivoted_premanual[~final_pivoted_premanual["background_music"]].to_csv(
+    "supplimentary/data/vggsounder_0.1.6.csv", index=False
 )
 
 # %%
-# Save inhouse + mturk pivoted labels
-final_inhouse_mturk_pivoted = get_pivoted_labels(final_inhouse_mturk)
-final_inhouse_mturk_pivoted.to_csv(
-    f"supplimentary/intermediate-tables/{threshold:.1f}_{decide_by}_inhouse+mturk_formated.csv",
-    index=False,
-)
-
-# %%
-# INTEGRATE MANUAL RE-ANNOTATIONS (may_2026) -> VGGSounder v0.1.6
-# may_2026.csv has only label + modality; meta labels are preserved per-video
-# from the unchanged pipeline output `final_pivoted`.
-manual = pd.read_csv(
-    "supplimentary/manual-annotations/may_2026.csv", keep_default_na=False
-)
-
-# Unannotated samples -> delete set (derived inline from may_2026.csv)
-to_delete_ids = set(manual[manual["label"] == ""]["video_id"])
-
-# Real replacement annotations
-manual = manual[(manual["label"] != "") & (manual["modality"] != "")]
-manual_ids = set(manual["video_id"])
-
-meta_by_video = final_pivoted.drop_duplicates("video_id").set_index("video_id")[
+# ----------------------------------------------------------------------------- #
+# GEN-4 FINAL CHAIN: Merge -> May 2026 -> Revert Gemini -> Heuristics (last)
+# ----------------------------------------------------------------------------- #
+# (a) Merged decisions WITHOUT heuristics (heuristics are applied last).
+kept_long = get_final_labels(merged, add_heuristics=False, decide_by=DECIDE_BY)
+pivoted = get_pivoted_labels(kept_long)
+meta_by_video = pivoted.drop_duplicates("video_id").set_index("video_id")[
     utils.META_CLASSES
 ]
 
+# (b) INTEGRATE MANUAL RE-ANNOTATIONS (may_2026): hard override.
+manual = pd.read_csv(
+    "supplimentary/manual-annotations/may_2026.csv", keep_default_na=False
+)
+to_delete_ids = set(manual[manual["label"] == ""]["video_id"])
+manual = manual[(manual["label"] != "") & (manual["modality"] != "")]
+manual_ids = set(manual["video_id"])
+
 manual_rows = []
 for video_id, group in manual.groupby("video_id"):
-    meta = (
-        meta_by_video.loc[video_id].to_dict()
-        if video_id in meta_by_video.index
-        else {m: False for m in utils.META_CLASSES}
-    )
+    meta = _meta_lookup(video_id, meta_by_video)
     for _, r in group.iterrows():
         manual_rows.append(
             {
@@ -396,17 +414,33 @@ for video_id, group in manual.groupby("video_id"):
                 **meta,
             }
         )
-manual_pivoted = pd.DataFrame(manual_rows, columns=final_pivoted.columns)
+manual_pivoted = pd.DataFrame(manual_rows, columns=pivoted.columns)
 
-final_pivoted = pd.concat(
+pivoted = pd.concat(
     [
-        final_pivoted[~final_pivoted["video_id"].isin(manual_ids | to_delete_ids)],
+        pivoted[~pivoted["video_id"].isin(manual_ids | to_delete_ids)],
         manual_pivoted,
     ]
 )
 
-final_pivoted.to_csv(
-    "supplimentary/data/vggsounder+background-music.csv", index=False
+# (c) Revert ALL Gemini proposals (exists==True), overriding may-2026 deletions.
+VERDICTS_PATH = "supplimentary/manual-annotations/deleted_label_verdicts.csv"
+verdicts = pd.read_csv(VERDICTS_PATH)
+verdicts = verdicts[verdicts["exists"].astype(str).str.lower() == "true"][
+    ["video_id", "label", "modality"]
+]
+n_before = len(pivoted)
+pivoted = apply_reverts(pivoted, verdicts, meta_by_video)
+print(
+    f"Reverted {len(verdicts)} Gemini proposals; "
+    f"pivoted rows {n_before} -> {len(pivoted)}"
 )
-vggsounder = final_pivoted[~final_pivoted["background_music"]]
-vggsounder.to_csv("supplimentary/data/vggsounder.csv", index=False)
+
+# (d) Heuristics LAST (on merge + may-2026 + reverts).
+pivoted = apply_heuristics_pivoted(pivoted)
+
+# (e) Save the final dataset.
+pivoted.to_csv("supplimentary/data/vggsounder+background-music.csv", index=False)
+pivoted[~pivoted["background_music"]].to_csv(
+    "supplimentary/data/vggsounder.csv", index=False
+)
