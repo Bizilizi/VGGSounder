@@ -374,18 +374,13 @@ final.to_csv(
 )
 
 # %%
-# Pre-manual pivoted labels (v0.1.6), with and without background music.
+# Pre-manual pivoted labels, with and without background music.
 final_pivoted_premanual = get_pivoted_labels(final)
-final_pivoted_premanual.to_csv(
-    "supplimentary/data/vggsounder+background-music_0.1.6.csv", index=False
-)
-final_pivoted_premanual[~final_pivoted_premanual["background_music"]].to_csv(
-    "supplimentary/data/vggsounder_0.1.6.csv", index=False
-)
+
 
 # %%
 # ----------------------------------------------------------------------------- #
-# GEN-4 FINAL CHAIN: Merge -> May 2026 -> Revert Gemini -> Heuristics (last)
+# FINAL CHAIN: Merge -> May 2026 -> Revert Gemini -> Heuristics (last)
 # ----------------------------------------------------------------------------- #
 # (a) Merged decisions WITHOUT heuristics (heuristics are applied last).
 kept_long = get_final_labels(merged, add_heuristics=False, decide_by=DECIDE_BY)
@@ -423,7 +418,7 @@ pivoted = pd.concat(
     ]
 )
 
-# (c) Revert ALL Gemini proposals (exists==True), overriding may-2026 deletions.
+# (c) Revert labels proposed by Gemini (exists==True), overriding some may-2026 deletions.
 VERDICTS_PATH = "supplimentary/manual-annotations/deleted_label_verdicts.csv"
 verdicts = pd.read_csv(VERDICTS_PATH)
 verdicts = verdicts[verdicts["exists"].astype(str).str.lower() == "true"][
